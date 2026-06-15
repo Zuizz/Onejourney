@@ -51,14 +51,13 @@ Modes: Local + Metro + Bus
 
 ## Tech Stack
 
-| Layer | Tools |
-| Frontend | React 19, Vite |
-| Backend | Node.js, Express |
-| Styling | CSS, component-level inline styles |
-| UI Icons | lucide-react |
-| Charts / Visuals | Recharts |
-| Data Transport | Fetch API, Server-Sent Events |
-| Tooling | concurrently, Vite scripts |
+- Frontend: React 19, Vite
+- Backend: Node.js, Express
+- Styling: CSS and component-level inline styles
+- UI Icons: lucide-react
+- Charts / Visuals: Recharts
+- Data Transport: Fetch API and Server-Sent Events
+- Tooling: concurrently and Vite scripts
 
 ## Project Structure
 
