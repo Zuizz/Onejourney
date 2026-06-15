@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Map, Search, ArrowLeftRight, HelpCircle, ExternalLink, RefreshCw } from 'lucide-react';
+import { Map, Search, ArrowLeftRight, HelpCircle, ExternalLink, RefreshCw, Satellite } from 'lucide-react';
 
 const TABS = [
   { id: 'map', label: 'Live Map', url: 'https://railradar.in/railradar', icon: Map, color: 'var(--indigo-600)' },
@@ -22,8 +22,9 @@ export default function RailRadarScreen() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 800, background: 'linear-gradient(135deg, var(--indigo-600), var(--indigo-800))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            🛰️ Indian Railways Radar
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 600, color: '#111827', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <Satellite size={18} strokeWidth={1.5} style={{ color: '#6B7280' }} />
+            Indian railways radar
           </h2>
           <p className="text-xs text-muted" style={{ marginTop: 2 }}>Real-time GPS tracking & live status via RailRadar</p>
         </div>
@@ -85,14 +86,14 @@ export default function RailRadarScreen() {
 
       {/* Info Warning Banner */}
       <div style={{
-        background: 'linear-gradient(135deg, var(--indigo-50), #f0f4ff)',
-        border: '1px solid var(--indigo-100)',
+        background: '#F9FAFB',
+        border: '1px solid #E5E7EB',
         borderRadius: 'var(--radius-md)',
         padding: '10px 14px',
         display: 'flex', alignItems: 'flex-start', gap: 8
       }}>
-        <HelpCircle size={15} style={{ color: 'var(--indigo-500)', flexShrink: 0, marginTop: 1 }} />
-        <p style={{ fontSize: '0.68rem', color: 'var(--indigo-700)', lineHeight: 1.4, margin: 0 }}>
+        <HelpCircle size={15} strokeWidth={1.5} style={{ color: '#6B7280', flexShrink: 0, marginTop: 1 }} />
+        <p style={{ fontSize: '0.68rem', color: '#6B7280', lineHeight: 1.4, margin: 0 }}>
           This visualizer uses crowd-powered GPS telemetry. Search a train number inside the frame, or view active trains directly on the map.
         </p>
       </div>
@@ -100,8 +101,8 @@ export default function RailRadarScreen() {
       {/* Iframe Viewport Container */}
       <div className="card" style={{
         flex: 1, padding: 0, overflow: 'hidden', position: 'relative',
-        border: '1px solid var(--slate-200)', borderRadius: 'var(--radius-lg)',
-        boxShadow: 'var(--shadow-md)', minHeight: 450, display: 'flex'
+        border: '1px solid #E5E7EB', borderRadius: 'var(--radius-md)',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.04)', minHeight: 450, display: 'flex'
       }}>
         <iframe
           key={`${selectedTab.id}-${key}`}

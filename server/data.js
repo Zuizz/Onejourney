@@ -447,6 +447,76 @@ export function* journeyUpdates(route) {
   }
 }
 
+// ─── Home suggestions ───
+export function getHomeSuggestion(recentTrips = []) {
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayName = dayNames[new Date().getDay()];
+
+  if (recentTrips.length > 0) {
+    const trip = recentTrips[0];
+    return {
+      from: trip.from,
+      to: trip.to,
+      modes: trip.mode || 'Metro + Walk',
+      duration: trip.time || '~25 min',
+      label: 'Based on your recent trips',
+      source: 'recent',
+    };
+  }
+
+  const weekdayRoutes = {
+    1: { from: 'Andheri', to: 'BKC', modes: 'Metro Line 1 + Walk', duration: '~28 min' },
+    2: { from: 'Dadar', to: 'Lower Parel', modes: 'Local + Walk', duration: '~18 min' },
+    3: { from: 'Bandra', to: 'Churchgate', modes: 'Local', duration: '~32 min' },
+    4: { from: 'Ghatkopar', to: 'Powai', modes: 'Metro + Bus', duration: '~35 min' },
+    5: { from: 'Thane', to: 'CST', modes: 'Local', duration: '~55 min' },
+    6: { from: 'Borivali', to: 'Andheri', modes: 'Local + Metro', duration: '~40 min' },
+    0: { from: 'Vashi', to: 'BKC', modes: 'Harbour + Metro', duration: '~45 min' },
+  };
+
+  const route = weekdayRoutes[new Date().getDay()] || weekdayRoutes[1];
+  return {
+    ...route,
+    label: `Your usual ${dayName} route`,
+    source: 'dna',
+  };
+}
+
+// ─── Alternate route for live journey ───
+export function getAlternateRoute(currentRouteId, routes) {
+  const alternates = routes.filter(r => r.id !== currentRouteId);
+  if (alternates.length === 0) return null;
+  return alternates.sort((a, b) => a.durationMin - b.durationMin)[0];
+}
+
+// ─── Safety preferences ───
+let safetyPrefs = { shareLocation: true, womenFriendly: false, safeZone: true };
+
+export function getSafetyPrefs() {
+  return { ...safetyPrefs };
+}
+
+export function updateSafetyPrefs(prefs) {
+  safetyPrefs = { ...safetyPrefs, ...prefs };
+  return { ...safetyPrefs };
+}
+
+export function triggerSOS(booking) {
+  const waypoint = booking?.route?.waypoints?.[0];
+  return {
+    success: true,
+    message: 'Emergency alert sent to your contacts and local authorities',
+    contacts: [
+      { name: 'Ambulance', number: '108' },
+      { name: 'Police', number: '100' },
+      { name: 'Women Helpline', number: '1091' },
+    ],
+    location: waypoint ? { lat: waypoint.lat, lng: waypoint.lng, name: waypoint.name } : null,
+    ticketId: booking?.ticketId,
+    timestamp: new Date().toISOString(),
+  };
+}
+
 // ─── Dashboard Data ───
 export function getDashboardData() {
   const hour = new Date().getHours();

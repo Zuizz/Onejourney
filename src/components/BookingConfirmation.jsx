@@ -1,48 +1,77 @@
+import { useState } from 'react';
 import { useJourney } from '../App';
-import { CheckCircle, Download, Share2, Leaf } from 'lucide-react';
+import { CheckCircle, Download, Share2, Leaf, Ticket } from 'lucide-react';
+import { downloadTicket, shareTicket, qrCodeUrl } from '../utils/journeyActions';
 
 export default function BookingConfirmation() {
-  const { booking, navigate } = useJourney();
+  const { booking, navigate, showToast } = useJourney();
+  const [saving, setSaving] = useState(false);
+  const [sharing, setSharing] = useState(false);
 
   if (!booking) {
     return (
       <div className="screen-pad flex flex-col gap-16 animate-fade-in" style={{ alignItems: 'center', paddingTop: 60 }}>
-        <div style={{ fontSize: '2rem' }}>🎫</div>
+        <Ticket size={32} strokeWidth={1.5} style={{ color: '#6B7280' }} />
         <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>No booking yet</p>
         <p className="text-xs text-muted" style={{ textAlign: 'center' }}>Search and book a route first</p>
-        <button className="btn btn-primary" onClick={() => navigate('home')}>Go to Home</button>
+        <button className="btn btn-primary" onClick={() => navigate('home')}>Go to home</button>
       </div>
     );
   }
 
+  const handleSave = () => {
+    setSaving(true);
+    try {
+      downloadTicket(booking);
+      showToast('Ticket saved to downloads', 'success');
+    } catch {
+      showToast('Could not save ticket', 'warning');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleShare = async () => {
+    setSharing(true);
+    try {
+      const result = await shareTicket(booking);
+      showToast(
+        result.method === 'native' ? 'Shared successfully' : 'Link copied to clipboard',
+        'success'
+      );
+    } catch {
+      showToast('Share cancelled or failed', 'warning');
+    } finally {
+      setSharing(false);
+    }
+  };
+
+  const qrData = `${booking.ticketId}|${booking.from}|${booking.to}|${booking.date}`;
+
   return (
     <div className="screen-pad flex flex-col gap-16 animate-fade-in" style={{ alignItems: 'center', paddingTop: 32 }}>
-      {/* Green Checkmark */}
       <div style={{
         width: 72, height: 72, borderRadius: '50%',
-        background: 'linear-gradient(135deg, var(--green-400), var(--green-600))',
+        background: '#059669',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        boxShadow: '0 8px 30px rgba(16,185,129,0.35)',
-        animation: 'pulse 2s ease infinite',
       }}>
-        <CheckCircle size={36} style={{ color: '#fff' }} />
+        <CheckCircle size={36} strokeWidth={1.5} style={{ color: '#fff' }} />
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.25rem', fontWeight: 800 }}>Booking Confirmed!</h2>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Booking confirmed</h2>
         <p className="text-sm text-muted mt-8">Your journey has been booked successfully</p>
       </div>
 
-      {/* Ticket Card */}
       <div style={{
         width: '100%', background: '#fff',
-        borderRadius: 'var(--radius-xl)',
-        boxShadow: 'var(--shadow-lg)',
+        borderRadius: 'var(--radius-md)',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
         overflow: 'hidden', position: 'relative',
+        border: '1px solid #E5E7EB',
       }}>
-        {/* Top Section */}
         <div style={{
-          background: 'linear-gradient(135deg, var(--indigo-600), var(--indigo-800))',
+          background: '#4F46E5',
           padding: '20px', color: '#fff',
         }}>
           <div className="flex items-center justify-between">
@@ -71,7 +100,6 @@ export default function BookingConfirmation() {
           </div>
         </div>
 
-        {/* Punched Hole Divider */}
         <div style={{ position: 'relative', height: 20 }}>
           <div style={{
             position: 'absolute', left: -12, top: '50%', transform: 'translateY(-50%)',
@@ -87,7 +115,6 @@ export default function BookingConfirmation() {
           }} />
         </div>
 
-        {/* Bottom Section */}
         <div style={{ padding: '16px 20px 20px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 16 }}>
             {[
@@ -95,83 +122,80 @@ export default function BookingConfirmation() {
               { label: 'Mode', value: booking.mode },
               { label: 'Cost', value: booking.cost },
             ].map(d => (
-              <div key={d.label} style={{ textAlign: 'center' }}>
-                <p style={{ fontSize: '0.6rem', color: 'var(--slate-500)' }}>{d.label}</p>
-                <p style={{ fontSize: '0.78rem', fontWeight: 700, marginTop: 2 }}>{d.value}</p>
+              <div key={d.label} className="metric-chip">
+                <p className="metric-label">{d.label}</p>
+                <p className="metric-value" style={{ fontSize: d.label === 'Mode' ? '0.82rem' : undefined }}>{d.value}</p>
               </div>
             ))}
           </div>
 
-          {/* QR Placeholder */}
           <div style={{
             width: 120, height: 120, margin: '0 auto',
             background: 'var(--slate-50)', borderRadius: 'var(--radius-md)',
             display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center',
-            border: '2px dashed var(--slate-200)',
+            border: '2px dashed var(--slate-200)', overflow: 'hidden',
           }}>
-            <div style={{
-              display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 2,
-              width: 70, height: 70,
-            }}>
-              {Array.from({ length: 49 }, (_, i) => (
-                <div key={i} style={{
-                  background: [0,1,2,6,7,8,14,21,28,35,42,43,44,48,4,5,3,11,12,13,18,19,20,24,25,26,30,31,32,36,37,38,40,41,46,47].includes(i)
-                    ? 'var(--slate-800)' : 'transparent',
-                  borderRadius: 1,
-                }} />
-              ))}
-            </div>
-            <p style={{ fontSize: '0.55rem', color: 'var(--slate-400)', marginTop: 6 }}>SCAN TO BOARD</p>
+            <img
+              src={qrCodeUrl(qrData, 100)}
+              alt={`QR code for ticket ${booking.ticketId}`}
+              width={100}
+              height={100}
+              style={{ display: 'block' }}
+            />
+            <p style={{ fontSize: '0.55rem', color: '#6B7280', marginTop: 4, letterSpacing: '0.05em' }}>Scan to board</p>
           </div>
         </div>
       </div>
 
-      {/* Eco Strip */}
       <div style={{
         width: '100%',
-        background: 'linear-gradient(135deg, var(--green-50), #ecfdf5)',
-        border: '1px solid var(--green-100)',
-        borderRadius: 'var(--radius-lg)',
+        background: '#F9FAFB',
+        border: '1px solid #E5E7EB',
+        borderRadius: 'var(--radius-md)',
         padding: '14px 16px',
       }}>
         <div className="flex items-center gap-8 mb-12">
-          <Leaf size={16} style={{ color: 'var(--green-600)' }} />
-          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--green-700)' }}>Eco Impact</span>
+          <Leaf size={16} strokeWidth={1.5} style={{ color: '#059669' }} />
+          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#111827' }}>Eco impact</span>
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <p style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--green-700)' }}>{booking.co2Saved} CO₂</p>
-            <p style={{ fontSize: '0.7rem', color: 'var(--green-600)' }}>saved vs driving alone</p>
+            <p style={{ fontSize: '18px', fontWeight: 700, color: '#059669' }}>{booking.co2Saved} CO₂</p>
+            <p style={{ fontSize: '0.7rem', color: '#6B7280' }}>saved vs driving alone</p>
           </div>
           <div style={{
-            background: '#fff', borderRadius: 'var(--radius-md)',
+            background: '#fff', borderRadius: 'var(--radius-sm)',
             padding: '8px 12px', textAlign: 'center',
-            border: '1px solid var(--green-100)',
+            border: '1px solid #E5E7EB',
           }}>
-            <p style={{ fontSize: '0.55rem', color: 'var(--slate-500)' }}>Powered by</p>
-            <p style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--indigo-600)' }}>ONDC</p>
+            <p style={{ fontSize: '0.55rem', color: '#6B7280' }}>Powered by</p>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, color: '#111827' }}>ONDC</p>
           </div>
         </div>
       </div>
 
-      {/* Action Buttons */}
       <div className="flex gap-8 w-full">
-        <button className="btn w-full" style={{
-          background: 'var(--slate-100)', color: 'var(--slate-700)', border: '1px solid var(--slate-200)',
-        }}>
-          <Download size={16} /> Save
+        <button
+          className="btn w-full"
+          style={{ background: 'var(--slate-100)', color: 'var(--slate-700)', border: '1px solid var(--slate-200)' }}
+          onClick={handleSave}
+          disabled={saving}
+        >
+          <Download size={16} /> {saving ? 'Saving...' : 'Save'}
         </button>
-        <button className="btn w-full" style={{
-          background: 'var(--slate-100)', color: 'var(--slate-700)', border: '1px solid var(--slate-200)',
-        }}>
-          <Share2 size={16} /> Share
+        <button
+          className="btn w-full"
+          style={{ background: 'var(--slate-100)', color: 'var(--slate-700)', border: '1px solid var(--slate-200)' }}
+          onClick={handleShare}
+          disabled={sharing}
+        >
+          <Share2 size={16} /> {sharing ? 'Sharing...' : 'Share'}
         </button>
       </div>
 
-      {/* Track Button */}
       <button className="btn btn-primary w-full" onClick={() => navigate('active')} style={{ padding: '14px' }}>
-        Track Live Journey
+        Track live journey
       </button>
     </div>
   );

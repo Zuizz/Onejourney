@@ -53,7 +53,11 @@
 
   --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-lg: 12px;
+  --grey-100: #F3F4F6;
+  --grey-200: #E5E7EB;
+  --grey-500: #6B7280;
+  --grey-900: #111827;
   --radius-xl: 20px;
   --radius-full: 9999px;
 }
@@ -109,7 +113,7 @@ body {
   align-items: center;
   gap: 4px;
   padding: 12px 8px;
-  background: linear-gradient(135deg, var(--indigo-600), var(--indigo-800));
+  background: #4F46E5;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -152,13 +156,13 @@ body {
 /* ---- Cards ---- */
 .card {
   background: #fff;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 16px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--slate-100);
+  box-shadow: none;
+  border: 1px solid var(--grey-200);
 }
 .card-elevated {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 /* ---- Buttons ---- */
@@ -177,18 +181,17 @@ body {
   transition: all 0.2s ease;
 }
 .btn-primary {
-  background: linear-gradient(135deg, var(--indigo-500), var(--indigo-700));
+  background: #4F46E5;
   color: #fff;
-  box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+  box-shadow: none;
 }
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(99,102,241,0.5);
+  background: #4338ca;
 }
 .btn-danger {
-  background: linear-gradient(135deg, var(--red-500), var(--red-600));
+  background: var(--red-500);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(239,68,68,0.4);
+  box-shadow: none;
 }
 
 /* ---- Chips ---- */
@@ -197,19 +200,19 @@ body {
   align-items: center;
   gap: 4px;
   padding: 6px 14px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 500;
-  border: 1.5px solid var(--slate-200);
+  font-weight: 600;
+  border: 1px solid var(--grey-200);
   background: #fff;
-  color: var(--slate-600);
+  color: var(--grey-500);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .chip.active {
   background: var(--indigo-50);
-  border-color: var(--indigo-400);
-  color: var(--indigo-700);
+  border-color: #4F46E5;
+  color: #4F46E5;
 }
 .chip:hover { border-color: var(--indigo-300); }
 
@@ -255,8 +258,34 @@ body {
 .slider-fill {
   height: 100%;
   border-radius: var(--radius-full);
-  background: linear-gradient(90deg, var(--indigo-400), var(--indigo-600));
+  background: #4F46E5;
   transition: width 0.1s ease;
+}
+
+/* ---- Metric chips ---- */
+.metric-chip {
+  background: var(--grey-100);
+  border-radius: var(--radius-sm);
+  padding: 10px 8px;
+  text-align: center;
+}
+.metric-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+  margin-bottom: 4px;
+}
+.metric-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
 }
 .slider-thumb {
   position: absolute;

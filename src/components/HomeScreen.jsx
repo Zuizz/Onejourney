@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useJourney } from '../App';
 import {
-  MapPin, ArrowUpDown, Search, Clock, ChevronRight,
-  Train, Bus, Car, Bike, Navigation, Ship, Loader
+  ArrowUpDown, Search, Clock, ChevronRight,
+  Train, Bus, Car, Bike, Ship, Loader, User, Route
 } from 'lucide-react';
 
 const modeIcons = {
@@ -15,7 +15,7 @@ const modeIcons = {
 };
 
 export default function HomeScreen() {
-  const { setRoutes, setSearchParams, setExcludedModes, navigate, setLoading, loading } = useJourney();
+  const { setRoutes, setSearchParams, setExcludedModes, navigate, setLoading, loading, showToast } = useJourney();
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [modes, setModes] = useState(['Local', 'Metro', 'Bus']);
@@ -24,18 +24,37 @@ export default function HomeScreen() {
   const [showFromDropdown, setShowFromDropdown] = useState(false);
   const [showToDropdown, setShowToDropdown] = useState(false);
   const [recentTrips, setRecentTrips] = useState([]);
+  const [suggestion, setSuggestion] = useState(null);
+  const [userName, setUserName] = useState('ZA');
   const fromRef = useRef(null);
   const toRef = useRef(null);
 
-  // Load recent trips from localStorage
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem('oj_recent_trips') || '[]');
       setRecentTrips(saved.slice(0, 5));
+
+      const profile = JSON.parse(localStorage.getItem('oj_profile') || '{}');
+      if (profile.initials) setUserName(profile.initials);
     } catch { setRecentTrips([]); }
   }, []);
 
-  // Fetch station suggestions
+  useEffect(() => {
+    const loadSuggestion = async () => {
+      try {
+        const saved = JSON.parse(localStorage.getItem('oj_recent_trips') || '[]');
+        const res = await fetch('/api/home/suggestions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ recentTrips: saved }),
+        });
+        const data = await res.json();
+        setSuggestion(data);
+      } catch { /* ignore */ }
+    };
+    loadSuggestion();
+  }, []);
+
   const fetchStations = async (query, setter, showSetter) => {
     if (query.length < 1) { setter([]); showSetter(false); return; }
     try {
@@ -51,64 +70,89 @@ export default function HomeScreen() {
 
   const swap = () => { setFrom(to); setTo(from); };
 
-  const handleSearch = async () => {
-    if (!from || !to) return;
+  const runSearch = async (searchFrom, searchTo, searchModes = modes) => {
+    if (!searchFrom || !searchTo) return;
+    setFrom(searchFrom);
+    setTo(searchTo);
     setLoading(true);
     try {
       const res = await fetch('/api/routes/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ from, to, modes }),
+        body: JSON.stringify({ from: searchFrom, to: searchTo, modes: searchModes }),
       });
       const data = await res.json();
       setRoutes(data.routes);
       setExcludedModes(data.excludedModes || []);
-      setSearchParams({ from, to, modes });
+      setSearchParams({ from: searchFrom, to: searchTo, modes: searchModes });
 
-      // Save to recent trips
-      const trip = { from, to, mode: modes.join(' + '), time: data.routes[0]?.duration || '—', ts: Date.now() };
-      const updated = [trip, ...recentTrips.filter(t => !(t.from === from && t.to === to))].slice(0, 5);
+      const trip = {
+        from: searchFrom, to: searchTo,
+        mode: searchModes.join(' + '),
+        time: data.routes[0]?.duration || '—',
+        ts: Date.now(),
+      };
+      const updated = [trip, ...recentTrips.filter(t => !(t.from === searchFrom && t.to === searchTo))].slice(0, 5);
       setRecentTrips(updated);
       localStorage.setItem('oj_recent_trips', JSON.stringify(updated));
 
       navigate('results');
     } catch (err) {
       console.error('Search failed:', err);
+      showToast('Route search failed. Try again.', 'warning');
     } finally {
       setLoading(false);
     }
   };
 
+  const handleSearch = () => runSearch(from, to, modes);
+
   const handleRecentClick = (trip) => {
-    setFrom(trip.from);
-    setTo(trip.to);
+    const tripModes = trip.mode ? trip.mode.split(' + ') : modes;
+    runSearch(trip.from, trip.to, tripModes);
+  };
+
+  const handleSuggestionClick = () => {
+    if (!suggestion) return;
+    runSearch(suggestion.from, suggestion.to, modes);
+  };
+
+  const handleProfileClick = () => {
+    const name = prompt('Your name (for profile):', userName === 'ZA' ? '' : userName);
+    if (name?.trim()) {
+      const initials = name.trim().split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+      setUserName(initials);
+      localStorage.setItem('oj_profile', JSON.stringify({ name: name.trim(), initials }));
+      showToast(`Welcome, ${name.trim()}!`, 'success');
+    }
   };
 
   return (
     <div className="screen-pad flex flex-col gap-16 animate-fade-in">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, background: 'linear-gradient(135deg, var(--indigo-600), var(--indigo-800))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#111827' }}>
             OneJourney
           </h1>
           <p className="text-xs text-muted" style={{ marginTop: 2 }}>Plan your multimodal commute — Mumbai</p>
         </div>
-        <div style={{
-          width: 40, height: 40, borderRadius: '50%',
-          background: 'linear-gradient(135deg, var(--indigo-400), var(--indigo-600))',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#fff', fontWeight: 700, fontSize: '0.9rem',
-          boxShadow: '0 4px 12px rgba(99,102,241,0.3)'
-        }}>
-          ZA
-        </div>
+        <button
+          onClick={handleProfileClick}
+          title="Edit profile"
+          style={{
+            width: 40, height: 40, borderRadius: '50%',
+            background: '#4F46E5',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            color: '#fff', fontWeight: 600, fontSize: '0.9rem',
+            border: 'none', cursor: 'pointer',
+          }}
+        >
+          {userName.length <= 2 ? userName : <User size={18} />}
+        </button>
       </div>
 
-      {/* From / To Card */}
-      <div className="card card-elevated" style={{ position: 'relative' }}>
+      <div className="card" style={{ position: 'relative' }}>
         <div className="flex flex-col gap-12">
-          {/* FROM */}
           <div style={{ position: 'relative' }}>
             <div className="flex items-center gap-8">
               <div style={{
@@ -141,10 +185,7 @@ export default function HomeScreen() {
                 {fromSuggestions.map(s => (
                   <div
                     key={s.id}
-                    style={{
-                      padding: '8px 12px', cursor: 'pointer', fontSize: '0.82rem',
-                      borderBottom: '1px solid var(--slate-50)',
-                    }}
+                    style={{ padding: '8px 12px', cursor: 'pointer', fontSize: '0.82rem', borderBottom: '1px solid var(--slate-50)' }}
                     onMouseDown={() => { setFrom(s.name); setShowFromDropdown(false); }}
                   >
                     <span style={{ fontWeight: 600 }}>{s.name}</span>
@@ -157,7 +198,6 @@ export default function HomeScreen() {
 
           <div style={{ height: 1, background: 'var(--slate-100)', marginLeft: 18 }} />
 
-          {/* TO */}
           <div style={{ position: 'relative' }}>
             <div className="flex items-center gap-8">
               <div style={{
@@ -190,10 +230,7 @@ export default function HomeScreen() {
                 {toSuggestions.map(s => (
                   <div
                     key={s.id}
-                    style={{
-                      padding: '8px 12px', cursor: 'pointer', fontSize: '0.82rem',
-                      borderBottom: '1px solid var(--slate-50)',
-                    }}
+                    style={{ padding: '8px 12px', cursor: 'pointer', fontSize: '0.82rem', borderBottom: '1px solid var(--slate-50)' }}
                     onMouseDown={() => { setTo(s.name); setShowToDropdown(false); }}
                   >
                     <span style={{ fontWeight: 600 }}>{s.name}</span>
@@ -205,7 +242,6 @@ export default function HomeScreen() {
           </div>
         </div>
 
-        {/* Swap button */}
         <button
           onClick={swap}
           style={{
@@ -213,57 +249,52 @@ export default function HomeScreen() {
             width: 36, height: 36, borderRadius: '50%',
             background: 'var(--indigo-50)', border: '2px solid var(--indigo-200)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            cursor: 'pointer', transition: 'all 0.2s',
-            color: 'var(--indigo-600)'
+            cursor: 'pointer', transition: 'all 0.2s', color: 'var(--indigo-600)'
           }}
         >
           <ArrowUpDown size={16} />
         </button>
       </div>
 
-      {/* Personalized Suggestion */}
-      <div
-        onClick={() => { setFrom('Andheri'); setTo('BKC'); }}
-        style={{
-          background: 'linear-gradient(135deg, var(--amber-50), var(--amber-100))',
-          border: '1px solid var(--amber-200)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '14px 16px',
-          cursor: 'pointer',
-          transition: 'transform 0.2s',
-        }}
-      >
-        <div className="flex items-center gap-8 mb-12">
-          <span style={{ fontSize: '1.1rem' }}>✨</span>
-          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--amber-600)' }}>PERSONALIZED FOR YOU</span>
-        </div>
-        <p style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--slate-700)' }}>
-          Your usual Monday route: <strong>Andheri → BKC</strong>
-        </p>
-        <p className="text-xs text-muted mt-8">Metro Line 1 + Walk • ~28 min</p>
-      </div>
+      {suggestion && (
+        <button
+          onClick={handleSuggestionClick}
+          disabled={loading}
+          style={{
+            background: '#F9FAFB',
+            border: '1px solid #E5E7EB',
+            borderRadius: 'var(--radius-md)',
+            padding: '14px 16px',
+            cursor: loading ? 'wait' : 'pointer',
+            transition: 'transform 0.2s',
+            textAlign: 'left', width: '100%',
+          }}
+        >
+          <div className="flex items-center gap-8 mb-12">
+            <Route size={16} strokeWidth={1.5} style={{ color: '#6B7280' }} />
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Personalized for you</span>
+          </div>
+          <p style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--slate-700)' }}>
+            {suggestion.label}: <strong>{suggestion.from} → {suggestion.to}</strong>
+          </p>
+          <p className="text-xs text-muted mt-8">{suggestion.modes} • {suggestion.duration}</p>
+        </button>
+      )}
 
-      {/* Mode Chips */}
       <div>
         <p className="text-xs font-semibold text-muted mb-12" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }}>Travel Modes</p>
         <div className="flex gap-8" style={{ flexWrap: 'wrap' }}>
           {Object.keys(modeIcons).map(m => {
             const Icon = modeIcons[m];
             return (
-              <button
-                key={m}
-                className={`chip ${modes.includes(m) ? 'active' : ''}`}
-                onClick={() => toggleMode(m)}
-              >
-                <Icon size={14} />
-                {m}
+              <button key={m} className={`chip ${modes.includes(m) ? 'active' : ''}`} onClick={() => toggleMode(m)}>
+                <Icon size={14} /> {m}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Search Button */}
       <button
         className="btn btn-primary w-full"
         style={{ padding: '14px', fontSize: '0.95rem' }}
@@ -271,22 +302,23 @@ export default function HomeScreen() {
         disabled={loading || !from || !to}
       >
         {loading ? <Loader size={18} style={{ animation: 'spin 1s linear infinite' }} /> : <Search size={18} />}
-        {loading ? 'Searching...' : 'Find Routes'}
+        {loading ? 'Searching...' : 'Find routes'}
       </button>
 
-      {/* Recent Trips */}
       {recentTrips.length > 0 && (
         <div>
           <p className="text-xs font-semibold text-muted mb-12" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }}>Recent Trips</p>
           <div className="flex flex-col gap-8">
             {recentTrips.map((trip, i) => (
-              <div
-                key={i}
+              <button
+                key={`${trip.from}-${trip.to}-${trip.ts}`}
                 className="card animate-slide-up"
+                disabled={loading}
                 style={{
                   animationDelay: `${i * 0.08}s`,
-                  cursor: 'pointer',
+                  cursor: loading ? 'wait' : 'pointer',
                   transition: 'box-shadow 0.2s',
+                  border: 'none', textAlign: 'left', width: '100%',
                 }}
                 onClick={() => handleRecentClick(trip)}
               >
@@ -295,8 +327,7 @@ export default function HomeScreen() {
                     <div style={{
                       width: 36, height: 36, borderRadius: 'var(--radius-sm)',
                       background: 'var(--indigo-50)', display: 'flex',
-                      alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--indigo-500)'
+                      alignItems: 'center', justifyContent: 'center', color: 'var(--indigo-500)'
                     }}>
                       <Clock size={16} />
                     </div>
@@ -307,7 +338,7 @@ export default function HomeScreen() {
                   </div>
                   <ChevronRight size={16} style={{ color: 'var(--slate-400)' }} />
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

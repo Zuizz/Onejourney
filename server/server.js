@@ -2,7 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import {
   stations, searchStations, generateRoutes, rankRoutes,
-  defaultDNA, createBooking, journeyUpdates, getDashboardData
+  defaultDNA, createBooking, journeyUpdates, getDashboardData,
+  getHomeSuggestion, getAlternateRoute, getSafetyPrefs, updateSafetyPrefs, triggerSOS
 } from './data.js';
 
 const app = express();
@@ -128,9 +129,51 @@ app.get('/api/dashboard', (req, res) => {
   res.json(getDashboardData());
 });
 
-// ─── Start ───
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`\n  🚀 OneJourney API running on http://localhost:${PORT}`);
-  console.log(`  📍 Mumbai transit data: ${stations.length} stations loaded\n`);
+// ─── Home suggestions ───
+app.post('/api/home/suggestions', (req, res) => {
+  const { recentTrips = [] } = req.body;
+  res.json(getHomeSuggestion(recentTrips));
 });
+
+// ─── Switch route during live journey ───
+app.post('/api/journey/switch-route', (req, res) => {
+  if (!activeBooking) {
+    return res.status(404).json({ error: 'No active booking' });
+  }
+  const alternate = getAlternateRoute(activeBooking.route.id, lastRoutes);
+  if (!alternate) {
+    return res.status(404).json({ error: 'No alternate routes available' });
+  }
+  activeBooking = createBooking(alternate);
+  activeJourneyGen = null;
+  res.json({ booking: activeBooking, message: `Switched to ${alternate.title}` });
+});
+
+// ─── Safety preferences ───
+app.get('/api/journey/safety', (req, res) => {
+  res.json(getSafetyPrefs());
+});
+
+app.put('/api/journey/safety', (req, res) => {
+  res.json(updateSafetyPrefs(req.body));
+});
+
+// ─── SOS emergency ───
+app.post('/api/journey/sos', (req, res) => {
+  if (!activeBooking) {
+    return res.status(404).json({ error: 'No active booking' });
+  }
+  res.json(triggerSOS(activeBooking));
+});
+
+export default app;
+
+// ─── Start (local dev only) ───
+const isDirectRun = process.argv[1]?.endsWith('server.js');
+if (isDirectRun) {
+  const PORT = 3001;
+  app.listen(PORT, () => {
+    console.log(`\n  🚀 OneJourney API running on http://localhost:${PORT}`);
+    console.log(`  📍 Mumbai transit data: ${stations.length} stations loaded\n`);
+  });
+}

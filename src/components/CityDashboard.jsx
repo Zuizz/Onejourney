@@ -3,7 +3,8 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 import {
-  TrendingUp, TrendingDown, Users, Clock, Activity, Loader
+  TrendingUp, TrendingDown, Users, Clock, Activity, Loader,
+  BarChart3, Building2, Target
 } from 'lucide-react';
 
 const getHeatColor = (val) => {
@@ -39,35 +40,29 @@ export default function CityDashboard() {
   if (loading || !data) {
     return (
       <div style={{ padding: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 80 }}>
-        <Loader size={32} style={{ color: 'var(--indigo-500)', animation: 'spin 1s linear infinite' }} />
+        <Loader size={32} style={{ color: '#4F46E5', animation: 'spin 1s linear infinite' }} />
         <p className="text-sm text-muted" style={{ marginTop: 16 }}>Loading dashboard data...</p>
       </div>
     );
   }
-
-  const priorityColors = {
-    HIGH: { color: 'var(--red-500)', bg: 'var(--red-50)' },
-    MEDIUM: { color: 'var(--amber-500)', bg: 'var(--amber-50)' },
-    LOW: { color: 'var(--green-500)', bg: 'var(--green-50)' },
-  };
 
   return (
     <div style={{ padding: 24, maxWidth: 1440, margin: '0 auto' }} className="animate-fade-in">
       {/* Dashboard Header */}
       <div className="flex items-center justify-between" style={{ marginBottom: 24 }}>
         <div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--slate-900)' }}>
-            🏙️ City Dashboard — Mumbai
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#111827' }}>
+            City dashboard — Mumbai
           </h1>
           <p className="text-sm text-muted mt-8">Real-time multimodal transit intelligence</p>
         </div>
         <div style={{
           display: 'flex', gap: 8, alignItems: 'center',
-          background: 'var(--green-50)', padding: '6px 14px',
-          borderRadius: 'var(--radius-full)', border: '1px solid var(--green-200)',
+          background: '#F9FAFB', padding: '6px 14px',
+          borderRadius: 'var(--radius-sm)', border: '1px solid #E5E7EB',
         }}>
-          <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--green-500)', animation: 'pulse 2s infinite' }} />
-          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--green-700)' }}>Live Data</span>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#059669', animation: 'pulse 2s infinite' }} />
+          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#6B7280' }}>Live data</span>
         </div>
       </div>
 
@@ -76,28 +71,28 @@ export default function CityDashboard() {
         {data.metrics.map((m, i) => {
           const Icon = metricIcons[i];
           const TrendIcon = m.up ? TrendingUp : TrendingDown;
-          const metricColors = ['var(--indigo-500)', 'var(--green-500)', 'var(--amber-500)', 'var(--indigo-400)'];
+          const metricColors = ['#6B7280', '#6B7280', '#6B7280', '#6B7280'];
           const color = metricColors[i];
           return (
-            <div key={i} className="card card-elevated animate-slide-up" style={{ animationDelay: `${i * 0.08}s` }}>
+            <div key={i} className="card animate-slide-up" style={{ animationDelay: `${i * 0.08}s` }}>
               <div className="flex items-center justify-between mb-12">
                 <div style={{
-                  width: 40, height: 40, borderRadius: 'var(--radius-md)',
-                  background: `${color}15`, display: 'flex',
+                  width: 40, height: 40, borderRadius: 'var(--radius-sm)',
+                  background: '#F3F4F6', display: 'flex',
                   alignItems: 'center', justifyContent: 'center',
                 }}>
-                  <Icon size={20} style={{ color }} />
+                  <Icon size={20} strokeWidth={1.5} style={{ color }} />
                 </div>
                 <div className="flex items-center gap-8" style={{
-                  color: m.up ? 'var(--green-600)' : 'var(--red-500)',
+                  color: m.up ? '#059669' : '#EF4444',
                   fontSize: '0.75rem', fontWeight: 600,
                 }}>
-                  <TrendIcon size={14} />
+                  <TrendIcon size={14} strokeWidth={1.5} />
                   {m.change}
                 </div>
               </div>
-              <p style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--slate-900)' }}>{m.value}</p>
-              <p className="text-xs text-muted mt-8">{m.title}</p>
+              <p style={{ fontSize: '18px', fontWeight: 700, color: '#111827' }}>{m.value}</p>
+              <p className="metric-label" style={{ marginTop: 8, justifyContent: 'flex-start' }}>{m.title}</p>
             </div>
           );
         })}
@@ -106,8 +101,11 @@ export default function CityDashboard() {
       {/* Heatmap + Chart */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
         {/* Demand Heatmap */}
-        <div className="card card-elevated">
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: 16 }}>📊 Demand Heatmap</h3>
+        <div className="card">
+          <h3 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: 16, color: '#111827', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <BarChart3 size={16} strokeWidth={1.5} style={{ color: '#6B7280' }} />
+            Demand heatmap
+          </h3>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.72rem' }}>
               <thead>
@@ -145,15 +143,18 @@ export default function CityDashboard() {
             <span className="text-xs text-muted">Low</span>
             <div style={{
               flex: 1, height: 8, borderRadius: 4,
-              background: 'linear-gradient(90deg, #eef2ff, #6366f1, #1e1b4b)',
+              background: '#E5E7EB',
             }} />
             <span className="text-xs text-muted">High</span>
           </div>
         </div>
 
         {/* Modal Shift Chart */}
-        <div className="card card-elevated">
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: 16 }}>📈 Modal Shift Trends (6 Months)</h3>
+        <div className="card">
+          <h3 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: 16, color: '#111827', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <TrendingUp size={16} strokeWidth={1.5} style={{ color: '#6B7280' }} />
+            Modal shift trends (6 months)
+          </h3>
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={data.chartData} barGap={2}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -178,43 +179,46 @@ export default function CityDashboard() {
 
       {/* Insights + City Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20 }}>
-        <div className="card card-elevated">
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: 16 }}>🎯 Planner Recommendations</h3>
+        <div className="card">
+          <h3 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: 16, color: '#111827', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <Target size={16} strokeWidth={1.5} style={{ color: '#6B7280' }} />
+            Planner recommendations
+          </h3>
           <div className="flex flex-col gap-12">
-            {data.insights.map((ins, i) => {
-              const pc = priorityColors[ins.priority] || priorityColors.LOW;
-              return (
-                <div key={i} className="animate-slide-up" style={{
+            {data.insights.map((ins, i) => (
+              <div key={i} className="animate-slide-up" style={{
                   animationDelay: `${i * 0.1}s`,
                   padding: '14px 16px', borderRadius: 'var(--radius-md)',
-                  border: `1px solid ${pc.color}30`, background: pc.bg,
+                  border: '1px solid #E5E7EB', background: '#F9FAFB',
                 }}>
                   <div className="flex items-center gap-8 mb-12">
                     <span style={{
-                      fontSize: '0.6rem', fontWeight: 800,
-                      background: `${pc.color}20`, color: pc.color,
-                      padding: '2px 8px', borderRadius: 'var(--radius-full)',
-                      letterSpacing: '0.5px',
+                      fontSize: '0.6rem', fontWeight: 600,
+                      background: '#F3F4F6', color: '#6B7280',
+                      padding: '2px 8px', borderRadius: 'var(--radius-sm)',
+                      letterSpacing: '0.05em',
                     }}>{ins.priority}</span>
-                    <span style={{ fontSize: '0.82rem', fontWeight: 700 }}>{ins.title}</span>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#111827' }}>{ins.title}</span>
                   </div>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--slate-600)', lineHeight: 1.5 }}>{ins.desc}</p>
+                  <p style={{ fontSize: '0.75rem', color: '#6B7280', lineHeight: 1.5 }}>{ins.desc}</p>
                 </div>
-              );
-            })}
+            ))}
           </div>
         </div>
 
-        <div className="card card-elevated">
-          <h3 style={{ fontSize: '0.95rem', fontWeight: 700, marginBottom: 16 }}>🌆 City at a Glance</h3>
+        <div className="card">
+          <h3 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: 16, color: '#111827', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <Building2 size={16} strokeWidth={1.5} style={{ color: '#6B7280' }} />
+            City at a glance
+          </h3>
           <div className="flex flex-col gap-12">
             {data.cityStats.map((stat, i) => (
               <div key={i} style={{
-                padding: '14px 16px', background: 'var(--slate-50)',
-                borderRadius: 'var(--radius-md)',
+                padding: '14px 16px', background: '#F9FAFB',
+                borderRadius: 'var(--radius-md)', border: '1px solid #E5E7EB',
               }}>
-                <p style={{ fontSize: '0.7rem', color: 'var(--slate-500)' }}>{stat.label}</p>
-                <p style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--slate-800)', marginTop: 4 }}>{stat.value}</p>
+                <p className="metric-label" style={{ justifyContent: 'flex-start' }}>{stat.label}</p>
+                <p className="metric-value" style={{ marginTop: 4 }}>{stat.value}</p>
               </div>
             ))}
           </div>
