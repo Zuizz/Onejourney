@@ -1,4 +1,6 @@
 // Mumbai Station Graph & Route Generation Engine
+import { loadBusRoutes, searchBusStations, generateBusRoutes } from './busRoutes.js';
+import { loadTrainRoutes, searchTrainStations, generateTrainRoutes } from './trainRoutes.js';
 
 // ─── Station Pool (~20 key nodes with lat/lng) ───
 export const stations = [
@@ -61,6 +63,10 @@ const modeConfig = {
   'Ferry': { speedKmMin: 0.25, costBase: 15, costPerKm: 3, co2PerKm: 0.04, safetyBase: 8.5, comfortBase: 7 },
 };
 
+// ─── Trigger loading of CSV datasets ───
+loadBusRoutes();
+loadTrainRoutes();
+
 // ─── Find station by name or id ───
 export function findStation(query) {
   const q = query.toLowerCase().trim();
@@ -71,9 +77,23 @@ export function findStation(query) {
 export function searchStations(query) {
   const q = query.toLowerCase().trim();
   if (!q) return stations.slice(0, 8);
-  return stations.filter(s =>
+
+  const localMatches = stations.filter(s =>
     s.name.toLowerCase().includes(q) || s.zone.toLowerCase().includes(q)
-  ).slice(0, 8);
+  );
+
+  const busMatches   = searchBusStations(q);
+  const trainMatches = searchTrainStations(q);
+
+  // Combine and deduplicate
+  const combined = [...localMatches];
+  for (const m of [...trainMatches, ...busMatches]) {
+    if (!combined.some(lm => lm.name.toLowerCase() === m.name.toLowerCase())) {
+      combined.push(m);
+    }
+  }
+
+  return combined.slice(0, 8);
 }
 
 // ─── Generate intermediate waypoints for a route segment ───
@@ -88,7 +108,19 @@ function getIntermediates(from, to, line) {
 }
 
 // ─── Route generation ───
-export function generateRoutes(fromName, toName, selectedModes = []) {
+export function generateRoutes(fromName, toName, selectedModes = [], date = null, time = null) {
+  // 1. Check Mumbai local train routes from CSV
+  const trainRoutes = generateTrainRoutes(fromName, toName, date, time);
+  if (trainRoutes && trainRoutes.length > 0) {
+    return trainRoutes;
+  }
+
+  // 2. Check long-distance bus routes from CSV
+  const csvRoutes = generateBusRoutes(fromName, toName, stations, date, time);
+  if (csvRoutes && csvRoutes.length > 0) {
+    return csvRoutes;
+  }
+
   const from = findStation(fromName);
   const to = findStation(toName);
 
@@ -332,16 +364,47 @@ export function rankRoutes(routes, preferences) {
   const total = cost + safety + speed + comfort || 1;
   const w = { cost: cost / total, safety: safety / total, speed: speed / total, comfort: comfort / total };
 
-  const maxCost = Math.max(...routes.map(r => r.costVal), 1);
+  const maxCost = Math.max(...routes.map(r => r.costVal ?? 0), 1);
   const maxDuration = Math.max(...routes.map(r => r.durationMin), 1);
 
   const scored = routes.map(r => {
-    const costScore = (1 - r.costVal / maxCost) * w.cost;
+    const costScore = maxCost > 0 ? (1 - (r.costVal ?? 0) / maxCost) * w.cost : 0;
     const safetyScore = (r.safetyVal / 10) * w.safety;
     const speedScore = (1 - r.durationMin / maxDuration) * w.speed;
     const comfortScore = (r.comfort / 10) * w.comfort;
     return { ...r, score: costScore + safetyScore + speedScore + comfortScore };
   });
+
+  const idStr = (r) => {
+    if (!r || r.id === undefined || r.id === null) return '';
+    return typeof r.id === 'string' ? r.id : String(r.id);
+  };
+  const isCsvRoute = routes.some(r => {
+    const id = idStr(r);
+    return id.startsWith('bus-csv-') || id.startsWith('train-csv-');
+  });
+  if (isCsvRoute) {
+    // Find the highest scored route to mark it recommended/insight
+    let bestRoute = scored[0];
+    let maxScore = -1;
+    for (const r of scored) {
+      if (r.score > maxScore) {
+        maxScore = r.score;
+        bestRoute = r;
+      }
+    }
+    scored.forEach(r => {
+      r.recommended = r.id === bestRoute.id;
+      if (r.recommended) {
+        r.insight = 'Best match for your Commute DNA preferences';
+        r.timeSaved = `Personalized ranking based on your profile`;
+      } else {
+        r.insight = null;
+        r.timeSaved = null;
+      }
+    });
+    return scored;
+  }
 
   scored.sort((a, b) => b.score - a.score);
   scored.forEach((r, i) => { r.recommended = i === 0; });
@@ -385,11 +448,20 @@ export const defaultDNA = {
 
 // ─── Booking generator ───
 let bookingCounter = 4800;
-export function createBooking(route) {
-  bookingCounter++;
-  const now = new Date();
+
+function formatDateFriendly(dateInput) {
+  const d = new Date(dateInput);
+  if (isNaN(d.getTime())) return dateInput;
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}`;
+}
+
+export function createBooking(route) {
+  bookingCounter++;
+  const dateStr = route.travelDate ? formatDateFriendly(route.travelDate) : formatDateFriendly(new Date());
+  const timeStr = route.departureTime || 'Today';
+
   return {
     ticketId: `OJ-2026-${bookingCounter}`,
     from: route.from,
@@ -399,7 +471,8 @@ export function createBooking(route) {
     duration: route.duration,
     mode: route.modes.join(' + '),
     cost: route.cost,
-    date: `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}`,
+    date: dateStr,
+    time: timeStr,
     co2Saved: `${Math.round((route.co2Val * 4 - route.co2Val) * 10) / 10} kg`,
     route,
   };

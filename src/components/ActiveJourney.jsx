@@ -7,7 +7,7 @@ import {
 import { shareTicket } from '../utils/journeyActions';
 
 export default function ActiveJourney() {
-  const { booking, setBooking, navigate, showToast } = useJourney();
+  const { booking, setBooking, navigate, showToast, token } = useJourney();
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [position, setPosition] = useState({ lat: 0, lng: 0, progress: 0 });
@@ -63,9 +63,9 @@ export default function ActiveJourney() {
   };
 
   useEffect(() => {
-    if (!booking) return;
+    if (!booking || !token) return;
 
-    const es = new EventSource('/api/journey/live');
+    const es = new EventSource(`/api/journey/live?token=${encodeURIComponent(token)}`);
     eventSourceRef.current = es;
 
     es.onopen = () => setConnected(true);

@@ -15,27 +15,41 @@ const modeIcons = {
 };
 
 export default function HomeScreen() {
-  const { setRoutes, setSearchParams, setExcludedModes, navigate, setLoading, loading, showToast } = useJourney();
+  const { setRoutes, setSearchParams, setExcludedModes, navigate, setLoading, loading, showToast, user, logout } = useJourney();
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [modes, setModes] = useState(['Local', 'Metro', 'Bus']);
   const [fromSuggestions, setFromSuggestions] = useState([]);
   const [toSuggestions, setToSuggestions] = useState([]);
+  const [travelDate, setTravelDate] = useState(() => {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  });
+  const [travelTime, setTravelTime] = useState(() => {
+    const today = new Date();
+    const hours = String(today.getHours()).padStart(2, '0');
+    const mins = String(today.getMinutes()).padStart(2, '0');
+    return `${hours}:${mins}`;
+  });
   const [showFromDropdown, setShowFromDropdown] = useState(false);
   const [showToDropdown, setShowToDropdown] = useState(false);
   const [recentTrips, setRecentTrips] = useState([]);
   const [suggestion, setSuggestion] = useState(null);
-  const [userName, setUserName] = useState('ZA');
   const fromRef = useRef(null);
   const toRef = useRef(null);
+  const getInitials = () => {
+    if (!user) return '??';
+    if (user.name) {
+      return user.name.trim().split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    }
+    return user.email.slice(0, 2).toUpperCase();
+  };
+  const userNameInitials = getInitials();
 
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem('oj_recent_trips') || '[]');
       setRecentTrips(saved.slice(0, 5));
-
-      const profile = JSON.parse(localStorage.getItem('oj_profile') || '{}');
-      if (profile.initials) setUserName(profile.initials);
     } catch { setRecentTrips([]); }
   }, []);
 
@@ -79,7 +93,13 @@ export default function HomeScreen() {
       const res = await fetch('/api/routes/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ from: searchFrom, to: searchTo, modes: searchModes }),
+        body: JSON.stringify({
+          from: searchFrom,
+          to: searchTo,
+          modes: searchModes,
+          date: travelDate,
+          time: travelTime
+        }),
       });
       const data = await res.json();
       setRoutes(data.routes);
@@ -118,12 +138,8 @@ export default function HomeScreen() {
   };
 
   const handleProfileClick = () => {
-    const name = prompt('Your name (for profile):', userName === 'ZA' ? '' : userName);
-    if (name?.trim()) {
-      const initials = name.trim().split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-      setUserName(initials);
-      localStorage.setItem('oj_profile', JSON.stringify({ name: name.trim(), initials }));
-      showToast(`Welcome, ${name.trim()}!`, 'success');
+    if (window.confirm(`Logged in as: ${user?.name || user?.email}\n\nDo you want to log out?`)) {
+      logout();
     }
   };
 
@@ -147,7 +163,7 @@ export default function HomeScreen() {
             border: 'none', cursor: 'pointer',
           }}
         >
-          {userName.length <= 2 ? userName : <User size={18} />}
+          {userNameInitials}
         </button>
       </div>
 
@@ -239,6 +255,39 @@ export default function HomeScreen() {
                 ))}
               </div>
             )}
+          </div>
+
+          <div style={{ height: 1, background: 'var(--slate-100)', marginLeft: 18 }} />
+
+          <div className="flex gap-12" style={{ marginLeft: 18 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <label style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--slate-400)', textTransform: 'uppercase' }}>Date</label>
+              <input
+                type="date"
+                value={travelDate}
+                onChange={e => setTravelDate(e.target.value)}
+                style={{
+                  border: 'none', outline: 'none', fontSize: '0.85rem',
+                  fontFamily: 'Inter', color: 'var(--slate-800)',
+                  background: 'var(--slate-50)', padding: '8px 10px',
+                  borderRadius: 'var(--radius-sm)', width: '100%'
+                }}
+              />
+            </div>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <label style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--slate-400)', textTransform: 'uppercase' }}>Time</label>
+              <input
+                type="time"
+                value={travelTime}
+                onChange={e => setTravelTime(e.target.value)}
+                style={{
+                  border: 'none', outline: 'none', fontSize: '0.85rem',
+                  fontFamily: 'Inter', color: 'var(--slate-800)',
+                  background: 'var(--slate-50)', padding: '8px 10px',
+                  borderRadius: 'var(--radius-sm)', width: '100%'
+                }}
+              />
+            </div>
           </div>
         </div>
 

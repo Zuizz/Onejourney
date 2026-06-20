@@ -4,15 +4,20 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "server": "node server/server.js",
     "dev:full": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/cli": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
+    "@supabase/supabase-js": "^2.108.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "groq-sdk": "^1.2.1",
     "lucide-react": "^1.18.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

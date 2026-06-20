@@ -1,0 +1,617 @@
+Mumbai Central Line — Local Train Timetable,,,,
+,,,,
+Speed codes:   S = Slow    F = Fast    M = Semi-fast (Medium),,,,
+Blank cell = train does not stop at / does not run to that station.,,,,
+,,,,
+Routes (one per sheet):,,,,
+Mumbai CST → Kurla,24 services,,,
+Mumbai CST → Kalyan,18 services,,,
+Mumbai CST → Titwala,29 services,,,
+Mumbai CST → Titwala,14 services,,,
+Mumbai CST → Ambernath,17 services,,,
+Mumbai CST → Ambernath,18 services,,,
+Mumbai CST → Kasara,14 services,,,
+Mumbai CST → Karjat,20 services,,,
+Mumbai CST → Khopoli,6 services,,,
+Mumbai CST → Kalyan,20 services,,,
+Mumbai CST → Badlapur,19 services,,,
+Mumbai CST → Badlapur,6 services,,,
+Mumbai CST → Dombivli,4 services,,,
+Mumbai CST → Kalyan,4 services,,,
+Mumbai CST → Thane,19 services,,,
+Mumbai CST → Thane,19 services,,,
+Dadar → Thane,8 services,,,
+Dadar → Dombivli,2 services,,,
+Kurla → Kalyan,7 services,,,
+Mumbai CST → Ambernath,1 services,,,
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla
+speed,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+Mumbai CST,12:34 am,8:45 am,9:11 am,9:23 am,9:32 am,9:49 am,9:56 am,10:08 am,10:47 am,11:20 am,11:59 am,3:42 pm,4:30 pm,5:04 pm,5:29 pm,5:48 pm,6:14 pm,6:34 pm,7:01 pm,8:22 pm,9:05 pm,10:24 pm,11:32 pm,11:55 pm
+Masjid,12:37 am,8:48 am,9:14 am,9:26 am,9:35 am,9:52 am,9:59 am,10:11 am,10:50 am,11:23 am,12:02 pm,3:45 pm,4:33 pm,5:07 pm,5:32 pm,5:51 pm,6:17 pm,6:37 pm,7:04 pm,8:25 pm,9:08 pm,10:27 pm,11:35 pm,11:58 pm
+Sandhurst Road,12:39 am,8:50 am,9:16 am,9:28 am,9:37 am,9:54 am,10:01 am,10:13 am,10:52 am,11:25 am,12:04 pm,3:47 pm,4:35 pm,5:09 pm,5:34 pm,5:53 pm,6:19 pm,6:39 pm,7:06 pm,8:27 pm,9:10 pm,10:29 pm,11:37 pm,
+Byculla,12:42 am,8:53 am,9:19 am,9:31 am,9:40 am,9:57 am,10:04 am,10:16 am,10:55 am,11:28 am,12:07 pm,3:50 pm,4:38 pm,5:12 pm,5:37 pm,5:56 pm,6:22 pm,6:42 pm,7:09 pm,8:30 pm,9:13 pm,10:32 pm,11:40 pm,12:03 am
+Chinchpokli,12:44 am,8:55 am,9:21 am,9:33 am,9:42 am,9:59 am,10:06 am,10:18 am,10:57 am,11:30 am,12:09 pm,3:52 pm,4:40 pm,5:14 pm,5:39 pm,5:58 pm,6:24 pm,6:44 pm,7:11 pm,8:32 pm,9:15 pm,10:34 pm,11:42 pm,12:05 am
+Currey Road,12:46 am,8:57 am,9:23 am,9:35 am,9:44 am,10:01 am,10:08 am,10:20 am,10:59 am,11:32 am,12:11 pm,3:54 pm,4:42 pm,5:16 pm,5:41 pm,6:00 pm,6:26 pm,6:46 pm,7:13 pm,8:34 pm,9:17 pm,10:36 pm,11:44 pm,12:07 am
+Parel,12:49 am,9:00 am,9:26 am,9:38 am,9:47 am,10:04 am,10:11 am,10:23 am,11:02 am,11:35 am,12:14 pm,3:57 pm,4:45 pm,5:19 pm,5:44 pm,6:03 pm,6:29 pm,6:49 pm,7:16 pm,8:37 pm,9:20 pm,10:39 pm,11:47 pm,12:10 am
+Dadar,12:52 am,9:03 am,9:29 am,9:41 am,9:50 am,10:07 am,10:14 am,10:26 am,11:05 am,11:38 am,12:17 pm,4:00 pm,4:48 pm,5:22 pm,5:47 pm,6:06 pm,6:32 pm,6:52 pm,7:19 pm,8:40 pm,9:23 pm,10:42 pm,11:50 pm,12:13 am
+Matunga,12:55 am,9:06 am,9:32 am,9:44 am,9:53 am,10:10 am,10:17 am,10:29 am,11:08 am,11:41 am,12:20 pm,4:03 pm,4:51 pm,5:25 pm,5:50 pm,6:09 pm,6:35 pm,6:55 pm,7:22 pm,8:43 pm,9:26 pm,10:45 pm,11:53 pm,12:16 am
+Sion,12:59 am,9:10 am,9:36 am,9:48 am,9:57 am,10:14 am,10:21 am,10:33 am,11:12 am,11:45 am,12:24 pm,4:07 pm,4:55 pm,5:29 pm,5:54 pm,6:13 pm,6:39 pm,6:59 pm,7:26 pm,8:47 pm,9:30 pm,10:49 pm,11:57 pm,12:20 am
+Kurla,1:03 am,9:14 am,9:40 am,9:52 am,10:01 am,10:18 am,10:25 am,10:37 am,11:16 am,11:49 am,12:28 pm,4:11 pm,4:59 pm,5:33 pm,5:58 pm,6:17 pm,6:43 pm,7:03 pm,7:30 pm,8:51 pm,9:34 pm,10:53 pm,12:01 am,12:24 am
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan
+speed,S,S,S,S,M,S,M,S,S,M,M,S,S,F,S,S,M,S
+Mumbai CST,3:03 pm,4:08 pm,4:45 pm,5:12 pm,5:22 pm,5:37 pm,6:03 pm,6:06 pm,6:28 pm,6:56 pm,7:06 pm,7:21 pm,7:28 pm,7:50 pm,8:07 pm,8:38 pm,8:39 pm,8:47 pm
+Masjid,3:06 pm,4:11 pm,4:48 pm,5:15 pm,,5:40 pm,,6:09 pm,,,7:09 pm,,7:31 pm,7:53 pm,8:10 pm,8:41 pm,,8:50 pm
+Sandhurst Road,3:08 pm,4:13 pm,4:50 pm,5:17 pm,,5:42 pm,,6:11 pm,,,7:11 pm,,7:33 pm,7:55 pm,8:12 pm,8:43 pm,,8:52 pm
+Byculla,3:11 pm,4:16 pm,4:53 pm,5:20 pm,5:29 pm,5:45 pm,6:10 pm,6:14 pm,6:35 pm,7:03 pm,7:14 pm,7:28 pm,7:36 pm,7:58 pm,8:15 pm,8:46 pm,8:46 pm,8:55 pm
+Chinchpokli,3:13 pm,4:18 pm,4:55 pm,5:22 pm,,5:47 pm,,6:16 pm,,,7:16 pm,,7:38 pm,8:00 pm,8:17 pm,8:48 pm,,8:57 pm
+Currey Road,3:15 pm,4:20 pm,4:57 pm,5:24 pm,,5:49 pm,,6:18 pm,,,7:18 pm,,7:40 pm,8:02 pm,8:19 pm,8:50 pm,,8:59 pm
+Parel,3:18 pm,4:23 pm,5:00 pm,5:27 pm,,5:52 pm,,6:21 pm,,,7:21 pm,,7:43 pm,8:05 pm,8:22 pm,8:53 pm,,9:02 pm
+Dadar,3:21 pm,4:26 pm,5:03 pm,5:30 pm,5:35 pm,5:55 pm,6:16 pm,6:24 pm,6:41 pm,7:09 pm,7:24 pm,7:34 pm,7:46 pm,8:08 pm,8:25 pm,8:56 pm,8:52 pm,9:05 pm
+Matunga,3:24 pm,4:29 pm,5:06 pm,5:33 pm,,5:58 pm,,6:27 pm,,,7:27 pm,,7:49 pm,8:11 pm,8:28 pm,8:59 pm,,9:08 pm
+Sion,3:28 pm,4:33 pm,5:10 pm,5:37 pm,,6:02 pm,,6:31 pm,,,7:31 pm,,7:53 pm,8:15 pm,8:32 pm,9:03 pm,,9:12 pm
+Kurla,3:32 pm,4:37 pm,5:14 pm,5:41 pm,5:43 pm,6:06 pm,6:24 pm,6:35 pm,6:49 pm,7:17 pm,7:35 pm,7:42 pm,7:57 pm,8:19 pm,8:36 pm,9:07 pm,9:00 pm,9:16 pm
+vidyavihar,3:35 pm,4:40 pm,5:17 pm,5:44 pm,,6:09 pm,,6:38 pm,,,7:38 pm,,8:00 pm,8:22 pm,8:39 pm,9:10 pm,,9:19 pm
+ghatkopar,3:38 pm,4:43 pm,5:20 pm,5:47 pm,5:48 pm,6:12 pm,6:29 pm,6:41 pm,6:54 pm,7:22 pm,7:41 pm,7:47 pm,8:03 pm,8:25 pm,8:42 pm,9:13 pm,9:05 pm,9:22 pm
+vikhroli,3:43 pm,4:48 pm,5:25 pm,5:52 pm,5:53 pm,6:17 pm,6:34 pm,6:46 pm,6:59 pm,7:27 pm,7:46 pm,,8:08 pm,8:30 pm,8:47 pm,9:18 pm,9:10 pm,9:27 pm
+kanjurmarg,3:46 pm,4:51 pm,5:28 pm,5:55 pm,,6:20 pm,,6:49 pm,,,7:49 pm,,8:11 pm,8:33 pm,8:50 pm,9:21 pm,,9:30 pm
+bhandup,3:48 pm,4:53 pm,5:30 pm,5:57 pm,,6:22 pm,,6:51 pm,,,7:51 pm,,8:13 pm,8:35 pm,8:52 pm,9:23 pm,,9:32 pm
+nahur,3:51 pm,4:56 pm,5:33 pm,6:00 pm,,6:25 pm,,6:54 pm,,,7:54 pm,,8:16 pm,8:38 pm,8:55 pm,9:26 pm,,9:35 pm
+mulund,3:54 pm,4:59 pm,5:36 pm,6:03 pm,,6:28 pm,,6:57 pm,,,7:57 pm,,8:19 pm,8:41 pm,8:58 pm,9:29 pm,,9:38 pm
+thane,3:58 pm,5:03 pm,5:40 pm,6:07 pm,6:06 pm,6:32 pm,6:47 pm,7:01 pm,7:12 pm,7:40 pm,8:01 pm,8:01 pm,8:23 pm,8:45 pm,9:02 pm,9:33 pm,9:23 pm,9:42 pm
+kalwa,4:02 pm,5:07 pm,5:44 pm,6:11 pm,6:11 pm,6:36 pm,6:52 pm,7:05 pm,7:17 pm,7:45 pm,8:05 pm,8:05 pm,8:27 pm,8:49 pm,9:06 pm,9:37 pm,9:28 pm,9:46 pm
+diva,4:12 pm,5:17 pm,5:54 pm,6:21 pm,6:21 pm,6:46 pm,7:02 pm,7:15 pm,7:27 pm,7:55 pm,8:15 pm,8:15 pm,8:37 pm,8:59 pm,9:16 pm,9:47 pm,9:38 pm,9:56 pm
+mumbra,4:08 pm,5:13 pm,5:50 pm,6:17 pm,6:17 pm,6:42 pm,6:58 pm,7:11 pm,7:23 pm,7:51 pm,8:11 pm,8:11 pm,8:33 pm,8:55 pm,9:12 pm,9:43 pm,9:34 pm,9:52 pm
+kopar,4:17 pm,5:22 pm,5:59 pm,6:26 pm,6:26 pm,6:51 pm,7:07 pm,7:20 pm,7:32 pm,8:00 pm,8:20 pm,8:20 pm,8:42 pm,9:04 pm,9:21 pm,9:52 pm,9:43 pm,10:01 pm
+dombivli,4:20 pm,5:25 pm,6:02 pm,6:29 pm,6:29 pm,6:54 pm,7:10 pm,7:23 pm,7:35 pm,8:03 pm,8:23 pm,8:14 pm,8:45 pm,9:07 pm,9:24 pm,9:55 pm,9:46 pm,10:04 pm
+thakurli,4:23 pm,5:28 pm,6:05 pm,6:32 pm,6:32 pm,6:57 pm,7:13 pm,7:26 pm,7:38 pm,8:06 pm,8:26 pm,,8:48 pm,9:10 pm,9:27 pm,9:58 pm,9:49 pm,10:07 pm
+kalyan,4:29 pm,5:34 pm,6:11 pm,6:38 pm,6:37 pm,7:03 pm,7:18 pm,7:32 pm,7:43 pm,8:11 pm,8:32 pm,8:23 pm,8:54 pm,9:16 pm,9:33 pm,10:04 pm,9:54 pm,10:13 pm
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala
+speed,S,S,F,M,M,M,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,M,S
+Mumbai CST,6:26 am,6:54 am,9:05 am,9:20 am,9:37 am,10:00 am,10:24 am,10:40 am,11:04 am,11:36 am,12:03 pm,12:58 pm,1:14 pm,1:57 pm,2:14 pm,2:46 pm,3:25 pm,3:38 pm,,,,,,,,,,,
+Masjid,6:29 am,6:57 am,,,,,10:27 am,10:43 am,11:07 am,11:39 am,12:06 pm,1:01 pm,1:17 pm,2:00 pm,2:17 pm,2:49 pm,,3:41 pm,,,,,,,,,,,
+Sandhurst Road,6:31 am,6:59 am,,,,,10:29 am,10:45 am,11:09 am,11:41 am,12:08 pm,1:03 pm,1:19 pm,2:02 pm,2:19 pm,2:51 pm,,3:43 pm,,,,,,,,,,,
+Byculla,6:34 am,7:02 am,9:12 am,9:27 am,9:44 am,10:07 am,10:32 am,10:48 am,11:12 am,11:44 am,12:11 pm,1:06 pm,1:22 pm,2:05 pm,2:22 pm,2:54 pm,3:32 pm,3:46 pm,,,,,,,,,,,
+Chinchpokli,6:36 am,7:04 am,,,,,10:34 am,10:50 am,11:14 am,11:46 am,12:13 pm,1:08 pm,1:24 pm,2:07 pm,2:24 pm,2:56 pm,,3:48 pm,,,,,,,,,,,
+Currey Road,6:38 am,7:06 am,,,,,10:36 am,10:52 am,11:16 am,11:48 am,12:15 pm,1:10 pm,1:26 pm,2:09 pm,2:26 pm,2:58 pm,,3:50 pm,,,,,,,,,,,
+Parel,6:41 am,7:09 am,,,,,10:39 am,10:55 am,11:19 am,11:51 am,12:18 pm,1:13 pm,1:29 pm,2:12 pm,2:29 pm,3:01 pm,,3:53 pm,,,,,,,,,,,
+Dadar,6:44 am,7:12 am,9:18 am,9:33 am,9:50 am,10:13 am,10:42 am,10:58 am,11:22 am,11:54 am,12:21 pm,1:16 pm,1:32 pm,2:15 pm,2:32 pm,3:04 pm,3:38 pm,3:56 pm,,,,,,,,,,,
+Matunga,6:47 am,7:15 am,,,,,10:45 am,11:01 am,11:25 am,11:57 am,12:24 pm,1:19 pm,1:35 pm,2:18 pm,2:35 pm,3:07 pm,,3:59 pm,,,,,,,,,,,
+Sion,6:51 am,7:19 am,,,,,10:49 am,11:05 am,11:29 am,12:01 pm,12:28 pm,1:23 pm,1:39 pm,2:22 pm,2:39 pm,3:11 pm,,4:03 pm,,,,,,,,,,,
+Kurla,6:55 am,7:23 am,9:26 am,9:42 am,9:59 am,10:22 am,10:53 am,11:09 am,11:33 am,12:05 pm,12:32 pm,1:27 pm,1:43 pm,2:26 pm,2:43 pm,3:15 pm,3:47 pm,4:07 pm,,,,,,,,,,,
+vidyavihar,6:58 am,7:26 am,,,,,10:56 am,11:12 am,11:36 am,12:08 pm,12:35 pm,1:30 pm,1:46 pm,2:29 pm,2:46 pm,3:18 pm,,4:10 pm,,,,,,,,,,,
+ghatkopar,7:01 am,7:29 am,9:31 am,9:47 am,10:04 am,10:27 am,10:59 am,11:15 am,11:39 am,12:11 pm,12:38 pm,1:33 pm,1:49 pm,2:32 pm,2:49 pm,3:21 pm,3:52 pm,4:13 pm,,,,,,,,,,,
+vikhroli,7:06 am,7:34 am,,,,11:04 am,11:20 am,11:44 am,12:16 pm,12:43 pm,1:38 pm,1:54 pm,2:37 pm,2:54 pm,3:26 pm,,4:18 pm,4:18 pm,,,,,,,,,,,
+kanjurmarg,7:09 am,7:37 am,,,,11:07 am,11:23 am,11:47 am,12:19 pm,12:46 pm,1:41 pm,1:57 pm,2:40 pm,2:57 pm,3:29 pm,,4:21 pm,4:21 pm,,,,,,,,,,,
+bhandup,7:11 am,7:39 am,9:39 am,9:55 am,10:12 am,10:35 am,11:09 am,11:25 am,11:49 am,12:21 pm,12:48 pm,1:43 pm,1:59 pm,2:42 pm,2:59 pm,3:31 pm,4:00 pm,4:23 pm,,,,,,,,,,,
+nahur,7:14 am,7:42 am,,9:59 am,10:16 am,10:39 am,11:12 am,11:28 am,11:52 am,12:24 pm,12:51 pm,1:46 pm,2:02 pm,2:45 pm,3:02 pm,3:34 pm,,4:26 pm,,,,,,,,,,,
+mulund,7:17 am,7:45 am,,9:59 am,10:16 am,10:39 am,11:15 am,11:31 am,11:55 am,12:27 pm,12:54 pm,1:49 pm,2:05 pm,2:48 pm,3:05 pm,3:37 pm,4:04 pm,4:29 pm,,,,,,,,,,,
+thane,7:21 am,7:49 am,9:47 am,10:02 am,10:19 am,10:42 am,11:19 am,11:35 am,11:59 am,12:31 pm,12:58 pm,1:53 pm,2:09 pm,2:52 pm,3:09 pm,3:41 pm,4:07 pm,4:33 pm,,,,,,,,,,,
+kalwa,7:25 am,7:53 am,,10:07 am,10:24 am,10:47 am,11:23 am,11:39 am,12:03 pm,12:35 pm,1:02 pm,1:57 pm,2:13 pm,2:56 pm,3:13 pm,3:45 pm,4:12 pm,4:37 pm,,,,,,,,,,,
+diva,7:35 am,8:03 am,,10:17 am,10:34 am,10:57 am,11:33 am,11:49 am,12:13 pm,12:45 pm,1:12 pm,2:07 pm,2:23 pm,3:06 pm,3:23 pm,3:55 pm,4:22 pm,4:47 pm,,,,,,,,,,,
+mumbra,7:31 am,7:59 am,,10:13 am,10:30 am,10:53 am,11:29 am,11:45 am,12:09 pm,12:41 pm,1:08 pm,2:03 pm,2:19 pm,3:02 pm,3:19 pm,3:51 pm,4:18 pm,4:43 pm,,,,,,,,,,,
+kopar,7:40 am,8:08 am,,10:22 am,10:39 am,11:02 am,11:38 am,11:54 am,12:18 pm,12:50 pm,1:17 pm,2:12 pm,2:28 pm,3:11 pm,3:28 pm,4:00 pm,4:27 pm,4:52 pm,,,,,,,,,,,
+dombivli,7:43 am,8:11 am,10:00 am,10:25 am,10:42 am,11:05 am,11:41 am,11:57 am,12:21 pm,12:53 pm,1:20 pm,2:15 pm,2:31 pm,3:14 pm,3:31 pm,4:03 pm,4:30 pm,4:55 pm,,,,,,,,,,,
+thakurli,7:46 am,8:14 am,10:03 am,10:28 am,10:45 am,11:08 am,11:44 am,12:00 pm,12:24 pm,12:56 pm,1:23 pm,2:18 pm,2:34 pm,3:17 pm,3:34 pm,4:06 pm,4:33 pm,4:58 pm,,,,,,,,,,,
+kalyan,7:52 am,8:20 am,10:08 am,10:36 am,10:53 am,11:16 am,11:50 am,12:06 pm,12:30 pm,1:02 pm,1:29 pm,2:24 pm,2:40 pm,3:23 pm,3:40 pm,4:12 pm,4:41 pm,5:04 pm,,,,,,,,,,,
+shahad,7:56 am,8:24 am,10:12 am,10:40 am,10:57 am,11:20 am,11:54 am,12:10 pm,12:34 pm,1:06 pm,1:33 pm,2:28 pm,2:44 pm,3:27 pm,3:44 pm,4:16 pm,4:45 pm,5:08 pm,,,,,,,,,,,
+ambivli,8:00 am,8:28 am,10:16 am,10:44 am,11:01 am,11:24 am,11:58 am,12:14 pm,12:38 pm,1:10 pm,1:37 pm,2:32 pm,2:48 pm,3:31 pm,3:48 pm,4:20 pm,4:49 pm,5:12 pm,,,,,,,,,,,
+titwala,8:07 am,8:35 am,10:25 am,10:51 am,11:08 am,11:31 am,12:05 pm,12:21 pm,12:45 pm,1:17 pm,1:44 pm,2:39 pm,2:55 pm,3:38 pm,3:55 pm,4:27 pm,4:56 pm,5:19 pm,,,,,,,,,,,
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala,Titwala
+speed,S,F,F,S,F,F,F,S,S,S,S,S,S,S
+Mumbai CST,4:21 pm,5:28 pm,5:59 pm,6:40 pm,6:43 pm,7:30 pm,7:51 pm,8:27 pm,9:01 pm,9:25 pm,9:55 pm,10:28 pm,11:47 pm,10:49 pm
+Masjid,4:24 pm,,,6:43 pm,,,,8:30 pm,9:04 pm,9:28 pm,9:58 pm,10:31 pm,11:50 pm,10:52 pm
+Sandhurst Road,4:26 pm,,,6:45 pm,,,,8:32 pm,9:06 pm,9:30 pm,10:00 pm,10:33 pm,11:52 pm,10:54 pm
+Byculla,4:29 pm,5:35 pm,6:06 pm,6:48 pm,6:50 pm,7:37 pm,7:58 pm,8:35 pm,9:09 pm,9:33 pm,10:03 pm,10:36 pm,11:55 pm,10:57 pm
+Chinchpokli,4:31 pm,,,6:50 pm,,,,8:37 pm,9:11 pm,9:35 pm,10:05 pm,10:38 pm,11:57 pm,10:59 pm
+Currey Road,4:33 pm,,,6:52 pm,,,,8:39 pm,9:13 pm,9:37 pm,10:07 pm,10:40 pm,11:59 pm,11:01 pm
+Parel,4:36 pm,,,6:55 pm,,,,8:42 pm,9:16 pm,9:40 pm,10:10 pm,10:43 pm,12:02 am,11:04 pm
+Dadar,4:39 pm,5:42 pm,6:13 pm,6:58 pm,6:57 pm,7:43 pm,8:05 pm,8:45 pm,9:19 pm,9:43 pm,10:13 pm,10:46 pm,12:05 am,11:07 pm
+Matunga,4:42 pm,,,7:01 pm,,,,8:48 pm,9:22 pm,9:46 pm,10:16 pm,10:49 pm,12:08 am,11:10 pm
+Sion,4:46 pm,,,7:05 pm,,,,8:52 pm,9:26 pm,9:50 pm,10:20 pm,10:53 pm,12:12 am,11:14 pm
+Kurla,4:50 pm,5:50 pm,6:21 pm,7:09 pm,7:05 pm,7:51 pm,8:13 pm,8:56 pm,9:30 pm,9:54 pm,10:24 pm,10:57 pm,12:16 am,11:18 pm
+vidyavihar,4:53 pm,,,7:12 pm,,,,8:59 pm,9:33 pm,9:57 pm,10:27 pm,11:00 pm,12:19 am,11:21 pm
+ghatkopar,4:56 pm,5:54 pm,6:25 pm,7:15 pm,7:09 pm,7:56 pm,8:17 pm,9:02 pm,9:36 pm,10:00 pm,10:30 pm,11:03 pm,12:22 am,11:24 pm
+vikhroli,5:01 pm,,,7:20 pm,,,,9:07 pm,9:41 pm,10:05 pm,10:35 pm,11:08 pm,12:27 am,11:29 pm
+kanjurmarg,5:04 pm,,,7:23 pm,,,,9:10 pm,9:44 pm,10:08 pm,10:38 pm,11:11 pm,12:30 am,11:32 pm
+bhandup,5:06 pm,6:02 pm,6:33 pm,7:25 pm,7:17 pm,8:04 pm,8:25 pm,9:12 pm,9:46 pm,10:10 pm,10:40 pm,11:13 pm,12:32 am,11:34 pm
+nahur,5:09 pm,,,7:28 pm,,,,9:15 pm,9:49 pm,10:13 pm,10:43 pm,11:16 pm,12:35 am,11:37 pm
+mulund,5:12 pm,,,7:31 pm,,,,9:18 pm,9:52 pm,10:16 pm,10:46 pm,11:19 pm,12:38 am,11:40 pm
+thane,5:16 pm,6:10 pm,6:41 pm,7:35 pm,7:25 pm,8:12 pm,8:33 pm,9:22 pm,9:56 pm,10:20 pm,10:50 pm,11:23 pm,12:42 am,11:44 pm
+kalwa,5:20 pm,,,7:39 pm,,,,9:26 pm,10:00 pm,10:24 pm,10:54 pm,11:27 pm,12:46 am,11:48 pm
+diva,5:30 pm,,,7:49 pm,,,,9:36 pm,10:10 pm,10:34 pm,11:04 pm,11:37 pm,12:56 am,11:58 pm
+mumbra,5:26 pm,,,7:45 pm,,,,9:32 pm,10:06 pm,10:30 pm,11:00 pm,11:33 pm,12:52 am,11:54 pm
+kopar,5:35 pm,,,7:54 pm,,,,9:41 pm,10:15 pm,10:39 pm,11:09 pm,11:42 pm,1:01 am,12:03 am
+dombivli,5:38 pm,6:23 pm,6:54 pm,7:57 pm,7:38 pm,8:25 pm,8:46 pm,9:44 pm,10:18 pm,10:42 pm,11:12 pm,11:45 pm,1:04 am,12:06 am
+thakurli,5:41 pm,,,8:00 pm,,,,9:47 pm,10:21 pm,10:45 pm,11:15 pm,11:48 pm,1:07 am,12:09 am
+kalyan,5:47 pm,6:31 pm,7:02 pm,8:06 pm,7:46 pm,8:33 pm,8:54 pm,9:53 pm,10:27 pm,10:51 pm,11:21 pm,11:54 pm,1:13 am,12:15 am
+shahad,5:51 pm,6:35 pm,7:06 pm,8:10 pm,7:50 pm,8:37 pm,8:58 pm,9:57 pm,10:31 pm,10:55 pm,11:25 pm,11:58 pm,1:17 am,12:19 am
+ambivli,5:55 pm,6:39 pm,7:10 pm,8:14 pm,7:54 pm,8:41 pm,9:02 pm,10:01 pm,10:35 pm,10:59 pm,11:29 pm,12:02 am,1:21 am,12:23 am
+titwala,6:02 pm,6:48 pm,7:19 pm,8:21 pm,8:03 pm,8:50 pm,9:11 pm,10:08 pm,10:42 pm,11:06 pm,11:36 pm,12:09 am,1:28 am,12:30 am
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath
+speed,S,S,S,S,F,F,F,F,F,F,M,S,S,S,S,S,S
+Mumbai CST,5:07 am,5:31 am,5:46 am,6:18 am,6:51 am,7:25 am,8:24 am,8:50 am,9:16 am,10:04 am,10:25 am,10:36 am,11:08 am,11:32 am,12:11 pm,12:31 pm,12:54 pm
+Masjid,5:10 am,5:34 am,5:49 am,6:21 am,,,,,,,10:39 am,11:11 am,11:35 am,12:14 pm,12:34 pm,12:57 pm,1:29 pm
+Sandhurst Road,5:12 am,5:36 am,5:51 am,6:23 am,,,,,,,10:41 am,11:13 am,11:37 am,12:16 pm,12:36 pm,12:59 pm,1:31 pm
+Byculla,5:15 am,5:39 am,5:54 am,6:26 am,6:58 am,7:32 am,8:31 am,8:57 am,9:23 am,10:11 am,10:32 am,10:44 am,11:16 am,11:40 am,12:19 pm,12:39 pm,1:02 pm
+Chinchpokli,5:17 am,5:41 am,5:56 am,6:28 am,,,,,,,10:43 am,11:18 am,11:42 am,12:21 pm,12:41 pm,1:04 pm,1:36 pm
+Currey Road,5:19 am,5:43 am,5:58 am,6:30 am,,,,,,,10:48 am,11:20 am,11:44 am,12:23 pm,12:43 pm,1:06 pm,1:38 pm
+Parel,5:22 am,5:46 am,6:01 am,6:33 am,,,,,,,10:51 am,11:23 am,11:47 am,12:26 pm,12:46 pm,1:09 pm,1:41 pm
+Dadar,5:25 am,5:49 am,6:04 am,6:36 am,7:04 am,7:38 am,8:37 am,9:03 am,9:29 am,10:17 am,10:38 am,10:54 am,11:26 am,11:50 am,12:29 pm,12:49 pm,1:12 pm
+Matunga,5:28 am,5:52 am,6:07 am,6:39 am,,,,,,,11:29 am,11:53 am,12:32 pm,12:52 pm,1:15 pm,1:47 pm,1:47 pm
+Sion,5:32 am,5:56 am,6:11 am,6:43 am,,,,,,,11:01 am,11:33 am,11:57 am,12:36 pm,12:56 pm,1:19 pm,1:51 pm
+Kurla,5:36 am,6:00 am,6:15 am,6:47 am,7:12 am,7:46 am,8:45 am,9:11 am,9:37 am,10:25 am,10:46 am,11:05 am,11:37 am,12:01 pm,12:40 pm,1:00 pm,1:23 pm
+vidyavihar,5:39 am,6:03 am,6:18 am,6:50 am,,,,,,11:08 am,11:40 am,12:04 pm,12:43 pm,1:03 pm,1:26 pm,1:58 pm,1:58 pm
+ghatkopar,5:42 am,6:06 am,6:21 am,6:53 am,7:17 am,7:51 am,8:50 am,9:16 am,9:42 am,10:30 am,10:51 am,11:11 am,11:43 am,12:07 pm,12:46 pm,1:06 pm,1:29 pm
+vikhroli,5:47 am,6:11 am,6:26 am,6:58 am,,,,,,11:16 am,11:48 am,12:12 pm,12:51 pm,1:11 pm,1:34 pm,2:06 pm,2:06 pm
+kanjurmarg,5:50 am,6:14 am,6:29 am,7:01 am,,,,,,11:19 am,11:51 am,12:15 pm,12:54 pm,1:14 pm,1:37 pm,2:09 pm,2:09 pm
+bhandup,5:52 am,6:16 am,6:31 am,7:03 am,,,,,,11:21 am,11:53 am,12:17 pm,12:56 pm,1:16 pm,1:39 pm,2:11 pm,2:11 pm
+nahur,5:55 am,6:19 am,6:34 am,7:06 am,,,,,,11:24 am,11:56 am,12:20 pm,12:59 pm,1:19 pm,1:42 pm,2:14 pm,2:14 pm
+mulund,5:58 am,6:22 am,6:37 am,7:09 am,,,,,,11:27 am,11:59 am,12:23 pm,1:02 pm,1:22 pm,1:45 pm,2:17 pm,2:17 pm
+thane,6:02 am,6:26 am,6:41 am,7:13 am,7:31 am,8:05 am,9:04 am,9:30 am,9:56 am,10:44 am,11:05 am,11:31 am,12:03 pm,12:27 pm,1:06 pm,1:26 pm,1:49 pm
+kalwa,6:06 am,6:30 am,6:45 am,7:17 am,,,,,,11:09 am,11:35 am,12:07 pm,12:31 pm,1:10 pm,1:30 pm,1:53 pm,2:25 pm
+diva,6:16 am,6:40 am,6:55 am,7:27 am,,,,,,11:19 am,11:45 am,12:17 pm,12:41 pm,1:20 pm,1:40 pm,2:03 pm,2:35 pm
+mumbra,6:12 am,6:36 am,6:51 am,7:23 am,,,,,,11:15 am,11:41 am,12:13 pm,12:37 pm,1:16 pm,1:36 pm,1:59 pm,2:31 pm
+kopar,6:21 am,6:45 am,7:00 am,7:32 am,,,,,,11:24 am,11:50 am,12:22 pm,12:46 pm,1:25 pm,1:45 pm,2:08 pm,2:40 pm
+dombivli,6:24 am,6:48 am,7:03 am,7:35 am,7:44 am,8:18 am,9:17 am,9:43 am,10:09 am,10:57 am,11:27 am,12:25 pm,12:49 pm,1:28 pm,1:48 pm,2:11 pm,2:43 pm
+thakurli,6:27 am,6:51 am,7:06 am,7:38 am,,,,,,11:30 am,11:56 am,12:28 pm,12:52 pm,1:31 pm,1:51 pm,2:14 pm,2:46 pm
+kalyan,6:33 am,6:57 am,7:12 am,7:44 am,7:53 am,8:27 am,9:26 am,9:52 am,10:18 am,11:06 am,11:35 am,12:02 pm,12:34 pm,12:58 pm,1:37 pm,1:57 pm,2:20 pm
+vithalwadi,6:37 am,7:01 am,7:16 am,7:48 am,7:57 am,8:31 am,9:30 am,9:56 am,10:22 am,11:10 am,11:39 am,12:06 pm,12:38 pm,1:02 pm,1:41 pm,2:01 pm,2:24 pm
+ulhasnagar,6:40 am,7:04 am,7:19 am,7:51 am,8:00 am,8:34 am,9:33 am,9:59 am,10:25 am,11:13 am,11:42 am,12:09 pm,12:41 pm,1:05 pm,1:44 pm,2:04 pm,2:27 pm
+ambernath,6:46 am,7:10 am,7:25 am,7:57 am,8:05 am,8:39 am,9:38 am,10:04 am,10:30 am,11:18 am,11:46 am,12:15 pm,12:47 pm,1:11 pm,1:50 pm,2:10 pm,2:33 pm
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath,Ambernath
+speed,S,S,S,F,S,F,F,F,F,S,S,F,S,S,S,S,F,S
+Mumbai CST,2:10 pm,2:38 pm,2:59 pm,3:56 pm,4:12 pm,5:44 pm,6:06 pm,6:32 pm,6:52 pm,7:15 pm,7:55 pm,7:56 pm,8:18 pm,8:52 pm,9:46 pm,11:40 pm,5:00 pm,11:05 pm
+Masjid,2:13 pm,2:41 pm,3:02 pm,,4:15 pm,,,,,7:18 pm,7:58 pm,,8:21 pm,8:55 pm,9:49 pm,11:43 pm,,11:08 pm
+Sandhurst Road,2:15 pm,2:43 pm,3:04 pm,,4:17 pm,,,,,7:20 pm,8:00 pm,,8:23 pm,8:57 pm,9:51 pm,11:45 pm,,11:10 pm
+Byculla,2:18 pm,2:46 pm,3:07 pm,4:03 pm,4:20 pm,5:51 pm,6:13 pm,6:39 pm,6:59 pm,7:23 pm,8:03 pm,8:03 pm,8:26 pm,9:00 pm,9:54 pm,11:48 pm,5:07 pm,11:13 pm
+Chinchpokli,2:20 pm,2:48 pm,3:09 pm,,4:22 pm,,,,,7:25 pm,8:05 pm,,8:28 pm,9:02 pm,9:56 pm,11:50 pm,,11:15 pm
+Currey Road,2:22 pm,2:50 pm,3:11 pm,,4:24 pm,,,,,7:27 pm,8:07 pm,,8:30 pm,9:04 pm,9:58 pm,11:52 pm,,11:17 pm
+Parel,2:25 pm,2:53 pm,3:14 pm,4:27 pm,,,,,,7:30 pm,8:10 pm,,8:33 pm,9:07 pm,10:01 pm,11:55 pm,,11:20 pm
+Dadar,2:28 pm,2:56 pm,3:17 pm,4:09 pm,4:30 pm,5:57 pm,6:19 pm,6:45 pm,7:05 pm,7:33 pm,8:13 pm,8:09 pm,8:36 pm,9:10 pm,10:04 pm,11:58 pm,5:13 pm,11:23 pm
+Matunga,2:31 pm,2:59 pm,3:20 pm,,4:33 pm,,,,,7:36 pm,8:16 pm,,8:39 pm,9:13 pm,10:07 pm,12:01 am,,11:26 pm
+Sion,2:35 pm,3:03 pm,3:24 pm,,4:37 pm,,,,,7:40 pm,8:20 pm,,8:43 pm,9:17 pm,10:11 pm,12:05 am,,11:30 pm
+Kurla,2:39 pm,3:07 pm,3:28 pm,4:17 pm,4:41 pm,6:05 pm,6:27 pm,6:53 pm,7:13 pm,7:44 pm,8:24 pm,8:17 pm,8:47 pm,9:21 pm,10:15 pm,12:09 am,5:21 pm,11:34 pm
+vidyavihar,2:42 pm,3:10 pm,3:31 pm,,4:44 pm,,,,,7:47 pm,8:27 pm,,8:50 pm,9:24 pm,10:18 pm,12:12 am,,11:37 pm
+ghatkopar,2:45 pm,3:13 pm,3:34 pm,4:22 pm,4:47 pm,6:10 pm,6:32 pm,6:58 pm,7:18 pm,7:50 pm,8:30 pm,8:22 pm,8:53 pm,9:27 pm,10:21 pm,12:15 am,5:26 pm,11:40 pm
+vikhroli,2:50 pm,3:18 pm,3:39 pm,,4:52 pm,,,,,7:55 pm,8:35 pm,,8:58 pm,9:32 pm,10:26 pm,12:20 am,,11:45 pm
+kanjurmarg,2:53 pm,3:21 pm,3:42 pm,,4:55 pm,,,,,7:58 pm,8:38 pm,,9:01 pm,9:35 pm,10:29 pm,12:23 am,,11:48 pm
+bhandup,2:55 pm,3:23 pm,3:44 pm,,4:57 pm,,,,,8:00 pm,8:40 pm,,9:03 pm,9:37 pm,10:31 pm,12:25 am,,11:50 pm
+nahur,2:58 pm,3:26 pm,3:47 pm,,5:00 pm,,,,,8:03 pm,8:43 pm,,9:06 pm,9:40 pm,10:34 pm,12:28 am,,11:53 pm
+mulund,3:01 pm,3:29 pm,3:50 pm,,5:03 pm,,,,,8:06 pm,8:46 pm,,9:09 pm,9:43 pm,10:37 pm,12:31 am,,11:56 pm
+thane,3:05 pm,3:33 pm,3:54 pm,4:36 pm,5:07 pm,6:24 pm,6:46 pm,7:12 pm,7:32 pm,8:10 pm,8:50 pm,8:36 pm,9:13 pm,9:47 pm,10:41 pm,12:35 am,5:40 pm,
+kalwa,3:09 pm,3:37 pm,3:58 pm,,5:11 pm,,,,,8:14 pm,8:54 pm,,9:17 pm,9:51 pm,10:45 pm,12:39 am,,12:04 am
+diva,3:19 pm,3:47 pm,4:08 pm,,5:21 pm,,,,,8:24 pm,9:04 pm,,9:27 pm,10:01 pm,10:55 pm,12:49 am,,12:14 am
+mumbra,3:15 pm,3:43 pm,4:04 pm,,5:17 pm,,,,,8:20 pm,9:00 pm,,9:23 pm,9:57 pm,10:51 pm,12:45 am,,12:10 am
+kopar,3:24 pm,3:52 pm,4:13 pm,,5:26 pm,,,,,8:29 pm,9:09 pm,,9:32 pm,10:06 pm,11:00 pm,12:54 am,,12:19 am
+dombivli,3:27 pm,3:55 pm,4:16 pm,4:49 pm,5:29 pm,6:37 pm,6:59 pm,7:25 pm,7:45 pm,8:32 pm,9:12 pm,8:49 pm,9:35 pm,10:09 pm,11:03 pm,12:57 am,5:53 pm,12:22 am
+thakurli,3:30 pm,3:58 pm,4:19 pm,,5:32 pm,,,,,8:35 pm,9:15 pm,,9:38 pm,10:12 pm,11:06 pm,1:00 am,,12:25 am
+kalyan,3:36 pm,4:04 pm,4:25 pm,4:58 pm,5:38 pm,6:46 pm,7:08 pm,7:34 pm,7:54 pm,8:41 pm,9:21 pm,8:58 pm,9:44 pm,10:18 pm,11:12 pm,1:06 am,6:02 pm,12:31 am
+vithalwadi,3:40 pm,4:08 pm,4:29 pm,5:02 pm,5:42 pm,6:50 pm,7:12 pm,7:38 pm,7:58 pm,8:45 pm,9:25 pm,9:02 pm,9:48 pm,10:22 pm,11:16 pm,1:10 am,6:06 pm,12:35 am
+ulhasnagar,3:43 pm,4:11 pm,4:32 pm,5:05 pm,5:45 pm,6:53 pm,7:15 pm,7:41 pm,8:01 pm,8:48 pm,9:28 pm,9:05 pm,9:51 pm,10:25 pm,11:19 pm,1:13 am,6:09 pm,12:38 am
+ambernath,3:49 pm,4:17 pm,4:38 pm,5:10 pm,5:51 pm,6:58 pm,7:20 pm,7:46 pm,8:06 pm,8:54 pm,9:34 pm,9:10 pm,9:57 pm,10:31 pm,11:25 pm,1:19 am,6:14 pm,12:44 am
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara,Kasara
+speed,S,S,F,F,F,F,M,S,S,S,M,F,F,F
+Mumbai CST,4:05 am,5:03 am,7:05 am,8:33 am,9:41 am,10:20 am,11:19 am,12:19 pm,1:30 pm,2:55 pm,4:50 pm,6:20 pm,8:47 pm,7:21 pm
+Masjid,4:08 am,5:06 am,,,,,,12:22 pm,1:33 pm,2:58 pm,,,,
+Sandhurst Road,4:10 am,5:08 am,,,,,,12:24 pm,1:35 pm,3:00 pm,,,,
+Byculla,4:13 am,5:11 am,7:12 am,8:40 am,9:48 am,10:27 am,11:26 am,12:27 pm,1:38 pm,3:03 pm,4:57 pm,6:27 pm,8:54 pm,7:28 pm
+Chinchpokli,4:15 am,5:13 am,,,,,,12:29 pm,1:40 pm,3:05 pm,,,,
+Currey Road,4:17 am,5:15 am,,,,,,12:31 pm,1:42 pm,3:07 pm,,,,
+Parel,4:20 am,5:18 am,,,,,,12:34 pm,1:45 pm,3:10 pm,,,,
+Dadar,4:23 am,5:21 am,7:19 am,8:47 am,9:55 am,10:34 am,11:32 am,12:37 pm,1:48 pm,3:13 pm,5:03 pm,6:34 pm,9:01 pm,7:35 pm
+Matunga,4:26 am,5:24 am,,,,,,12:40 pm,1:51 pm,3:16 pm,,,,
+Sion,4:30 am,5:28 am,,,,,,12:44 pm,1:55 pm,3:20 pm,,,,
+Kurla,4:34 am,5:32 am,7:27 am,8:55 am,10:03 am,10:42 am,11:41 am,12:48 pm,1:59 pm,3:24 pm,5:12 pm,6:42 pm,9:09 pm,7:43 pm
+vidyavihar,4:37 am,5:35 am,,,,,,12:51 pm,2:02 pm,3:27 pm,,,,
+ghatkopar,4:40 am,5:38 am,7:32 am,9:00 am,10:08 am,10:47 am,11:46 am,12:54 pm,2:05 pm,3:30 pm,5:17 pm,6:47 pm,9:14 pm,7:48 pm
+vikhroli,4:45 am,5:43 am,,,,,,12:59 pm,2:10 pm,3:35 pm,,,,
+kanjurmarg,4:48 am,5:46 am,,,,,,1:02 pm,2:13 pm,3:38 pm,,,,
+bhandup,4:50 am,5:48 am,,,,,,1:04 pm,2:15 pm,3:40 pm,,,,
+nahur,4:53 am,5:51 am,,,,,,1:07 pm,2:18 pm,3:43 pm,,,,
+mulund,4:55 am,5:53 am,,,,,,1:09 pm,2:20 pm,3:45 pm,,,,
+thane,5:00 am,5:58 am,7:47 am,9:15 am,10:23 am,11:02 am,12:00 pm,1:14 pm,2:25 pm,3:50 pm,5:31 pm,7:02 pm,9:29 pm,8:03 pm
+kalwa,5:04 am,6:02 am,,,,,12:05 pm,1:18 pm,2:29 pm,3:54 pm,5:36 pm,,,
+diva,5:14 am,6:12 am,,,,,12:15 pm,1:28 pm,2:39 pm,4:04 pm,5:46 pm,,,
+mumbra,5:10 am,6:08 am,,,,,12:11 pm,1:24 pm,2:35 pm,4:00 pm,5:42 pm,,,
+kopar,5:19 am,6:17 am,,,,,12:20 pm,1:33 pm,2:44 pm,4:09 pm,5:51 pm,,,
+dombivli,5:22 am,6:20 am,7:59 am,9:27 am,10:35 am,11:14 am,12:23 pm,1:36 pm,2:47 pm,4:12 pm,5:54 pm,7:14 pm,9:41 pm,8:15 pm
+thakurli,5:25 am,6:23 am,,,,,12:26 pm,1:39 pm,2:50 pm,4:15 pm,5:57 pm,,,
+kalyan,5:31 am,6:29 am,8:06 am,9:34 am,10:42 am,11:21 am,12:34 pm,1:45 pm,2:56 pm,4:21 pm,6:05 pm,7:21 pm,9:48 pm,8:22 pm
+shahad,5:35 am,6:33 am,8:10 am,9:38 am,10:46 am,11:25 am,12:38 pm,1:49 pm,3:00 pm,4:25 pm,6:09 pm,7:25 pm,9:52 pm,8:26 pm
+ambivli,5:39 am,6:37 am,8:14 am,9:42 am,10:50 am,11:29 am,12:42 pm,1:53 pm,3:04 pm,4:29 pm,6:13 pm,7:29 pm,9:56 pm,8:30 pm
+titwala,5:46 am,6:44 am,8:21 am,9:49 am,10:57 am,11:36 am,12:49 pm,2:00 pm,3:11 pm,4:36 pm,6:20 pm,7:36 pm,10:03 pm,8:37 pm
+khadavli,5:54 am,6:52 am,8:29 am,9:57 am,11:05 am,11:44 am,12:57 pm,2:08 pm,3:19 pm,4:44 pm,6:28 pm,7:44 pm,10:11 pm,8:45 pm
+vasind,6:02 am,7:00 am,8:37 am,10:05 am,11:13 am,11:52 am,1:05 pm,2:16 pm,3:27 pm,4:52 pm,6:36 pm,7:52 pm,10:19 pm,8:53 pm
+asangaon,6:08 am,7:06 am,8:43 am,10:11 am,11:19 am,11:58 am,1:11 pm,2:22 pm,3:33 pm,4:58 pm,6:42 pm,7:58 pm,10:25 pm,8:59 pm
+atgaon,6:17 am,7:15 am,8:52 am,10:20 am,11:28 am,12:07 pm,1:20 pm,2:31 pm,3:42 pm,5:07 pm,6:51 pm,8:07 pm,10:34 pm,9:08 pm
+khardi,6:29 am,7:27 am,9:04 am,10:32 am,11:40 am,12:19 pm,1:32 pm,2:43 pm,3:54 pm,5:19 pm,7:03 pm,8:19 pm,10:46 pm,9:20 pm
+kasara,6:47 am,7:45 am,9:21 am,10:49 am,11:57 am,12:36 pm,1:49 pm,3:01 pm,4:12 pm,5:37 pm,7:20 pm,8:36 pm,11:03 pm,9:37 pm
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat,Karjat
+speed,S,S,S,F,F,F,F,F,F,M,F,F,M,F,F,F,M,S,S,S
+Mumbai CST,4:40 am,5:19 am,5:40 am,6:47 am,8:46 am,9:30 am,10:44 am,11:15 am,12:55 pm,1:40 pm,2:51 pm,4:10 pm,6:24 pm,7:00 pm,7:47 pm,8:51 pm,10:16 pm,11:28 pm,10:40 pm,
+Masjid,4:43 am,5:22 am,5:43 am,,,,,,,,,,,,,,10:19 pm,11:31 pm,10:43 pm,
+Sandhurst Road,4:45 am,5:24 am,5:45 am,,,,,,,,,,,,,,10:21 pm,11:33 pm,10:45 pm,
+Byculla,4:48 am,5:27 am,5:48 am,6:54 am,8:53 am,9:37 am,10:51 am,11:22 am,1:02 pm,1:47 pm,2:58 pm,4:17 pm,6:31 pm,7:07 pm,7:54 pm,8:58 pm,10:24 pm,11:36 pm,10:48 pm,
+Chinchpokli,4:50 am,5:29 am,5:50 am,,,,,,,,,,,,,10:26 pm,11:38 pm,10:50 pm,10:50 pm,
+Currey Road,4:52 am,5:31 am,5:52 am,,,,,,,,,,,,,10:28 pm,11:40 pm,10:52 pm,10:52 pm,
+Parel,4:55 am,5:34 am,5:55 am,,,,,,,,,,,,,10:31 pm,11:43 pm,10:55 pm,10:55 pm,
+Dadar,4:58 am,5:37 am,5:58 am,7:00 am,8:59 am,9:43 am,10:57 am,11:28 am,1:08 pm,1:53 pm,3:04 pm,4:23 pm,6:37 pm,7:13 pm,8:00 pm,9:04 pm,10:34 pm,11:46 pm,10:58 pm,
+Matunga,5:01 am,5:40 am,6:01 am,,,,,,,,,,,,,10:37 pm,11:49 pm,11:01 pm,11:01 pm,
+Sion,5:05 am,5:44 am,6:05 am,,,,,,,,,,,,,10:41 pm,11:53 pm,11:05 pm,11:05 pm,
+Kurla,5:09 am,5:48 am,6:09 am,7:08 am,9:07 am,9:51 am,11:05 am,11:36 am,1:16 pm,2:01 pm,3:12 pm,4:31 pm,6:45 pm,7:21 pm,8:08 pm,9:12 pm,10:45 pm,11:57 pm,11:09 pm,
+vidyavihar,5:12 am,5:51 am,6:12 am,,,,,,,,,,,,,10:48 pm,,11:12 pm,11:12 pm,
+ghatkopar,5:15 am,5:54 am,6:15 am,7:13 am,9:12 am,9:56 am,11:10 am,11:41 am,1:21 pm,2:06 pm,3:17 pm,4:36 pm,6:50 pm,7:26 pm,8:13 pm,9:17 pm,10:51 pm,12:03 am,11:15 pm,
+vikhroli,5:20 am,5:59 am,6:20 am,,,,,,,,,,,,10:56 pm,12:08 am,11:20 pm,11:20 pm,11:20 pm,
+kanjurmarg,5:23 am,6:02 am,6:23 am,,,,,,,,,,,,10:59 pm,12:11 am,11:23 pm,11:23 pm,11:23 pm,
+bhandup,5:25 am,6:04 am,6:25 am,,,,,,,,,,,,11:01 pm,12:13 am,11:25 pm,11:25 pm,11:25 pm,
+nahur,5:28 am,6:07 am,6:28 am,,,,,,,,,,,,11:04 pm,12:16 am,11:28 pm,11:28 pm,11:28 pm,
+mulund,5:31 am,6:10 am,6:31 am,7:26 am,9:25 am,10:09 am,11:23 am,11:54 am,2:19 pm,3:30 pm,7:03 pm,7:39 pm,8:26 pm,9:30 pm,11:07 pm,12:19 am,11:31 pm,11:31 pm,11:31 pm,
+thane,5:35 am,6:14 am,6:35 am,7:27 am,9:26 am,10:10 am,11:24 am,11:55 am,1:35 pm,2:20 pm,3:31 pm,4:50 pm,7:04 pm,7:40 pm,8:27 pm,9:31 pm,11:11 pm,12:23 am,11:35 pm,
+kalwa,5:39 am,6:18 am,6:39 am,,,,,,1:39 pm,,3:31 pm,4:54 pm,7:04 pm,7:40 pm,8:27 pm,9:35 pm,11:15 pm,12:27 am,11:39 pm,
+diva,5:49 am,6:28 am,6:49 am,,,,,,1:49 pm,,,5:04 pm,,,,9:45 pm,11:25 pm,12:37 am,11:49 pm,
+mumbra,5:45 am,6:24 am,6:45 am,,,,,,1:45 pm,,,5:00 pm,,,,9:41 pm,11:21 pm,12:33 am,11:45 pm,
+kopar,5:54 am,6:33 am,6:54 am,,,,,,1:54 pm,,,5:09 pm,,,,9:50 pm,11:30 pm,12:42 am,11:54 pm,
+dombivli,5:57 am,6:36 am,6:57 am,7:40 am,9:39 am,10:23 am,11:37 am,12:08 pm,1:57 pm,2:33 pm,3:44 pm,5:12 pm,7:17 pm,7:53 pm,8:40 pm,9:53 pm,11:33 pm,12:45 am,11:57 pm,
+thakurli,6:00 am,6:39 am,7:00 am,,,,,,2:00 pm,,,5:15 pm,,,,9:56 pm,11:36 pm,12:48 am,,
+kalyan,6:06 am,6:45 am,7:06 am,7:49 am,9:48 am,10:32 am,11:46 am,12:17 pm,2:05 pm,2:42 pm,3:53 pm,5:20 pm,7:26 pm,8:02 pm,8:49 pm,10:01 pm,11:42 pm,12:54 am,12:06 am,
+vithalwadi,6:10 am,6:49 am,7:10 am,7:53 am,9:52 am,10:36 am,11:50 am,12:21 pm,2:09 pm,2:46 pm,3:57 pm,5:24 pm,7:30 pm,8:06 pm,8:53 pm,10:05 pm,11:46 pm,12:58 am,12:10 am,
+ulhasnagar,6:13 am,6:52 am,7:13 am,7:56 am,9:55 am,10:39 am,11:53 am,12:24 pm,2:12 pm,2:49 pm,4:00 pm,5:27 pm,7:33 pm,8:09 pm,8:56 pm,10:08 pm,11:49 pm,1:01 am,12:13 am,
+ambernath,6:19 am,6:58 am,7:19 am,8:01 am,10:00 am,10:44 am,11:58 am,12:29 pm,2:16 pm,2:54 pm,4:05 pm,5:31 pm,7:38 pm,8:14 pm,9:01 pm,10:12 pm,11:55 pm,1:07 am,12:19 am,
+badlapur,6:28 am,7:07 am,7:28 am,8:10 am,10:09 am,10:53 am,12:07 pm,12:38 pm,2:24 pm,3:03 pm,4:14 pm,5:39 pm,7:47 pm,8:23 pm,9:10 pm,10:20 pm,12:04 am,1:16 am,12:28 am,
+vangani,6:39 am,7:18 am,7:39 am,8:21 am,10:20 am,11:04 am,12:18 pm,12:49 pm,2:34 pm,3:14 pm,4:25 pm,5:50 pm,7:58 pm,8:34 pm,9:21 pm,10:30 pm,12:15 am,1:27 am,12:39 am,
+shelu,6:44 am,7:23 am,7:44 am,8:26 am,10:25 am,11:09 am,12:23 pm,12:54 pm,2:38 pm,3:19 pm,4:30 pm,5:53 pm,8:03 pm,8:39 pm,9:26 pm,10:34 pm,12:20 am,1:32 am,12:44 am,
+neral,6:49 am,7:28 am,7:49 am,8:31 am,10:30 am,11:14 am,12:28 pm,12:59 pm,2:42 pm,3:24 pm,4:35 pm,5:57 pm,8:08 pm,8:44 pm,9:31 pm,10:38 pm,12:25 am,1:37 am,12:49 am,
+bhivpuri,6:57 am,7:36 am,7:57 am,8:39 am,10:38 am,11:22 am,12:36 pm,1:07 pm,2:49 pm,3:32 pm,4:43 pm,6:04 pm,8:16 pm,8:52 pm,9:39 pm,10:45 pm,12:33 am,1:45 am,12:57 am,
+karjat,7:05 am,7:44 am,8:05 am,8:49 am,10:48 am,11:32 am,12:46 pm,1:17 pm,2:58 pm,3:42 pm,4:53 pm,6:13 pm,8:26 pm,9:02 pm,9:49 pm,10:54 pm,12:41 am,1:53 am,1:05 am,
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Khopoli,Khopoli,Khopoli,Khopoli,Khopoli,Khopoli
+speed,F,S,F,F,S,F
+Mumbai CST,7:39 am,11:55 am,3:17 pm,5:32 pm,8:13 pm,9:54 pm
+Masjid,,11:58 am,,,8:16 pm,
+Sandhurst Road,,12:00 pm,,,8:18 pm,
+Byculla,7:46 am,12:03 pm,3:24 pm,5:39 pm,8:21 pm,10:01 pm
+Chinchpokli,,12:05 pm,,,8:23 pm,
+Currey Road,,12:07 pm,,,8:25 pm,
+Parel,,12:10 pm,,,8:28 pm,
+Dadar,7:52 am,12:13 pm,3:30 pm,5:45 pm,8:31 pm,10:07 pm
+Matunga,,12:16 pm,,,8:34 pm,
+Sion,,12:20 pm,,,8:38 pm,
+Kurla,8:00 am,12:24 pm,3:38 pm,5:53 pm,8:42 pm,10:15 pm
+vidyavihar,,12:27 pm,,,8:45 pm,
+ghatkopar,8:05 am,12:30 pm,3:43 pm,5:58 pm,8:48 pm,10:20 pm
+vikhroli,,12:35 pm,,,8:53 pm,
+kanjurmarg,,12:38 pm,,,8:56 pm,
+bhandup,,12:40 pm,,,8:58 pm,
+nahur,,12:43 pm,,,9:01 pm,
+mulund,8:15 am,12:46 pm,3:53 pm,6:08 pm,9:04 pm,10:30 pm
+thane,8:19 am,12:50 pm,3:57 pm,6:12 pm,9:08 pm,10:34 pm
+kalwa,,12:54 pm,,,9:12 pm,
+diva,,1:04 pm,,,9:22 pm,
+mumbra,,1:00 pm,,,9:18 pm,
+kopar,,1:09 pm,,,9:27 pm,
+dombivli,8:32 am,1:12 pm,4:10 pm,6:25 pm,9:30 pm,10:47 pm
+thakurli,,1:15 pm,,,9:33 pm,
+kalyan,8:41 am,1:21 pm,4:19 pm,6:34 pm,9:39 pm,10:56 pm
+vithalwadi,8:45 am,1:25 pm,4:23 pm,6:38 pm,9:43 pm,11:00 pm
+ulhasnagar,8:48 am,1:28 pm,4:26 pm,6:41 pm,9:46 pm,11:03 pm
+ambernath,8:53 am,1:34 pm,4:31 pm,6:46 pm,9:52 pm,11:08 pm
+badlapur,9:02 am,1:43 pm,4:40 pm,6:55 pm,10:01 pm,11:17 pm
+vangani,9:13 am,1:54 pm,4:51 pm,7:06 pm,10:12 pm,11:28 pm
+shelu,9:18 am,1:59 pm,4:56 pm,7:11 pm,10:17 pm,11:33 pm
+neral,9:23 am,2:04 pm,5:01 pm,7:16 pm,10:22 pm,11:38 pm
+bhivpuri,9:31 am,2:12 pm,5:09 pm,7:24 pm,10:30 pm,11:46 pm
+karjat,9:41 am,2:20 pm,5:19 pm,7:34 pm,10:38 pm,11:56 pm
+palasdari,9:47 am,2:26 pm,5:25 pm,7:40 pm,10:44 pm,12:02 am
+kelavli,9:54 am,2:33 pm,5:32 pm,7:47 pm,10:51 pm,12:09 am
+dolavli,9:57 am,2:36 pm,5:35 pm,7:50 pm,10:54 pm,12:12 am
+lowjee,10:01 am,2:40 pm,5:39 pm,7:54 pm,10:58 pm,12:16 am
+khopoli,10:07 am,2:46 pm,5:45 pm,8:00 pm,11:04 pm,12:22 am
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan
+speed,S,S,S,S,S,S,S,S,S,F,S,S,S,F,S,M,S,M,S,S
+Mumbai CST,6:00 am,6:14 am,6:22 am,6:34 am,6:38 am,7:03 am,7:18 am,7:25 am,7:35 am,7:50 am,8:02 am,8:13 am,8:36 am,8:37 am,8:54 am,8:55 am,9:12 am,9:44 am,,
+Masjid,6:03 am,6:17 am,6:25 am,6:37 am,6:41 am,7:06 am,7:21 am,7:28 am,,7:53 am,8:05 am,8:16 am,,8:40 am,,8:58 am,,9:47 am,,
+Sandhurst Road,6:05 am,6:19 am,6:27 am,6:39 am,6:43 am,7:08 am,7:23 am,7:30 am,,7:55 am,8:07 am,8:18 am,,8:42 am,9:00 am,,,9:49 am,,
+Byculla,6:08 am,6:22 am,6:30 am,6:42 am,6:46 am,7:11 am,7:26 am,7:33 am,7:42 am,7:58 am,8:10 am,8:21 am,8:43 am,8:45 am,9:01 am,9:03 am,9:19 am,9:52 am,,
+Chinchpokli,6:10 am,6:24 am,6:32 am,6:44 am,6:48 am,7:13 am,7:28 am,7:35 am,,8:00 am,8:12 am,8:23 am,,8:47 am,9:05 am,,,9:54 am,,
+Currey Road,6:12 am,6:26 am,6:34 am,6:46 am,6:50 am,7:15 am,7:30 am,7:37 am,,8:02 am,8:14 am,8:25 am,,8:49 am,,9:07 am,,9:56 am,,
+Parel,6:15 am,6:29 am,6:37 am,6:49 am,6:53 am,7:18 am,7:33 am,7:40 am,,8:05 am,8:17 am,8:28 am,,8:52 am,,9:10 am,,9:59 am,,
+Dadar,6:18 am,6:32 am,6:40 am,6:52 am,6:56 am,7:21 am,7:36 am,7:43 am,7:48 am,8:08 am,8:20 am,8:31 am,8:49 am,8:55 am,9:07 am,9:13 am,9:25 am,10:02 am,,
+Matunga,6:21 am,6:35 am,6:43 am,6:55 am,6:59 am,7:24 am,7:39 am,7:46 am,,8:11 am,8:23 am,8:34 am,8:58 am,,9:16 am,,,10:05 am,,
+Sion,6:25 am,6:39 am,6:47 am,6:59 am,7:03 am,7:28 am,7:43 am,7:50 am,,8:15 am,8:27 am,8:38 am,9:02 am,,9:20 am,,,10:09 am,,
+Kurla,6:29 am,6:43 am,6:51 am,7:03 am,7:07 am,7:32 am,7:47 am,7:54 am,7:56 am,8:19 am,8:31 am,8:42 am,8:57 am,9:06 am,9:15 am,9:24 am,9:33 am,10:13 am,,
+vidyavihar,6:32 am,6:46 am,6:54 am,7:06 am,7:10 am,7:35 am,7:50 am,7:57 am,,8:22 am,8:34 am,8:45 am,9:09 am,9:09 am,9:27 am,,,10:16 am,,
+ghatkopar,6:35 am,6:49 am,6:57 am,7:09 am,7:13 am,7:38 am,7:53 am,8:00 am,8:01 am,8:25 am,8:37 am,8:48 am,9:02 am,9:12 am,9:20 am,9:30 am,9:38 am,10:19 am,,
+vikhroli,6:40 am,6:54 am,7:02 am,7:14 am,7:18 am,7:43 am,7:58 am,8:05 am,,8:30 am,8:42 am,8:53 am,9:17 am,,9:25 am,9:35 am,9:43 am,10:24 am,,
+kanjurmarg,6:43 am,6:57 am,7:05 am,7:17 am,7:21 am,7:46 am,8:01 am,8:08 am,,8:33 am,8:45 am,8:56 am,9:20 am,,9:38 am,,,10:27 am,,
+bhandup,6:45 am,6:59 am,7:07 am,7:19 am,7:23 am,7:48 am,8:03 am,8:10 am,,8:35 am,8:47 am,8:58 am,9:22 am,,9:40 am,,,10:29 am,,
+nahur,6:48 am,7:02 am,7:10 am,7:22 am,7:26 am,7:51 am,8:06 am,8:13 am,,8:38 am,8:50 am,9:01 am,9:25 am,,9:43 am,,,10:32 am,,
+mulund,6:51 am,7:05 am,7:13 am,7:25 am,7:29 am,7:54 am,8:09 am,8:16 am,,8:41 am,8:53 am,9:04 am,9:28 am,,9:46 am,,,10:35 am,,
+thane,6:55 am,7:09 am,7:17 am,7:29 am,7:33 am,7:58 am,8:13 am,8:20 am,8:15 am,8:45 am,8:57 am,9:08 am,9:16 am,9:32 am,9:38 am,9:50 am,9:56 am,10:39 am,,
+kalwa,6:59 am,7:13 am,7:21 am,7:33 am,7:37 am,8:02 am,8:17 am,8:24 am,8:49 am,9:01 am,9:12 am,9:36 am,9:36 am,9:43 am,9:54 am,10:01 am,10:43 am,10:43 am,,
+diva,7:09 am,7:23 am,7:31 am,7:43 am,7:47 am,8:12 am,8:27 am,8:34 am,8:59 am,9:11 am,9:22 am,9:46 am,9:53 am,10:04 am,10:11 am,10:53 am,10:53 am,10:53 am,,
+mumbra,7:05 am,7:19 am,7:27 am,7:39 am,7:43 am,8:08 am,8:23 am,8:30 am,8:55 am,9:07 am,9:18 am,9:42 am,9:49 am,10:00 am,10:07 am,10:49 am,10:49 am,10:49 am,,
+kopar,7:14 am,7:28 am,7:36 am,7:48 am,7:52 am,8:17 am,8:32 am,8:39 am,9:04 am,9:16 am,9:27 am,9:51 am,9:58 am,10:09 am,10:16 am,11:01 am,11:01 am,11:01 am,,
+dombivli,7:17 am,7:31 am,7:39 am,7:51 am,7:55 am,8:20 am,8:35 am,8:42 am,8:28 am,9:07 am,9:19 am,9:30 am,9:54 am,10:01 am,10:12 am,10:15 am,11:04 am,11:04 am,,
+thakurli,7:20 am,7:34 am,7:42 am,7:54 am,7:58 am,8:23 am,8:38 am,8:45 am,,9:10 am,9:22 am,9:33 am,9:57 am,10:04 am,10:15 am,10:22 am,11:04 am,11:04 am,,
+kalyan,7:26 am,7:40 am,7:48 am,8:00 am,8:04 am,8:29 am,8:44 am,8:51 am,8:37 am,9:16 am,9:28 am,9:39 am,9:38 am,10:03 am,10:09 am,10:21 am,10:27 am,11:10 am,,
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur
+speed,F,F,F,F,F,S,F,M,F,F,S,S,S,S,S,F,F,F,M
+Mumbai CST,6:16 am,7:55 am,8:29 am,9:01 am,9:24 am,9:36 am,9:45 am,10:15 am,10:48 am,11:53 am,1:18 pm,1:49 pm,2:32 pm,3:29 pm,4:30 pm,5:25 pm,7:17 pm,7:25 pm,
+Masjid,,,,,,9:39 am,,,,,1:21 pm,1:52 pm,2:35 pm,3:32 pm,,,,,
+Sandhurst Road,,,,,,9:41 am,,,,,1:23 pm,1:54 pm,2:37 pm,3:34 pm,,,,,
+Byculla,6:23 am,8:02 am,8:36 am,9:08 am,9:31 am,9:44 am,9:52 am,10:22 am,10:55 am,,1:26 pm,1:57 pm,2:40 pm,3:37 pm,4:37 pm,5:32 pm,7:24 pm,7:32 pm,
+Chinchpokli,,,,,9:46 am,,,,,1:28 pm,1:59 pm,2:42 pm,3:39 pm,,,,,,
+Currey Road,,,,,9:48 am,,,,,1:30 pm,2:01 pm,2:44 pm,3:41 pm,,,,,,
+Parel,,,,,9:51 am,,,,,1:33 pm,2:04 pm,2:47 pm,3:44 pm,,,,,,
+Dadar,6:29 am,8:08 am,8:42 am,9:14 am,9:37 am,9:54 am,9:58 am,10:28 am,11:01 am,12:06 pm,1:36 pm,2:07 pm,2:50 pm,3:47 pm,4:43 pm,5:38 pm,7:30 pm,7:38 pm,
+Matunga,,,,,9:57 am,,,,,1:39 pm,2:10 pm,2:53 pm,3:50 pm,,,,,,
+Sion,,,,,10:01 am,,,,,1:43 pm,2:14 pm,2:57 pm,3:54 pm,,,,,,
+Kurla,6:37 am,8:16 am,8:50 am,9:22 am,9:45 am,10:05 am,10:06 am,10:36 am,11:09 am,12:14 pm,1:47 pm,2:18 pm,3:01 pm,3:58 pm,4:51 pm,5:46 pm,7:38 pm,7:46 pm,
+vidyavihar,,,,,10:08 am,,,,,1:50 pm,2:21 pm,3:04 pm,4:01 pm,,,,,,
+ghatkopar,6:42 am,8:21 am,8:55 am,9:27 am,9:50 am,10:11 am,10:11 am,10:41 am,11:14 am,12:19 pm,1:53 pm,2:24 pm,3:07 pm,4:04 pm,4:56 pm,5:51 pm,7:43 pm,7:51 pm,
+vikhroli,,,,,10:16 am,,,,,1:58 pm,2:29 pm,3:12 pm,4:09 pm,,,,,,
+kanjurmarg,,,,,10:19 am,,,,,2:01 pm,2:32 pm,3:15 pm,4:12 pm,,,,,,
+bhandup,,,,,10:21 am,,,,,2:03 pm,2:34 pm,3:17 pm,4:14 pm,,,,,,
+nahur,,,,,10:24 am,,,,,2:06 pm,2:37 pm,3:20 pm,4:17 pm,,,,,,
+mulund,,,,,10:27 am,,,,,2:09 pm,2:40 pm,3:23 pm,4:20 pm,,,,,,
+thane,6:56 am,8:35 am,9:09 am,9:41 am,10:04 am,10:31 am,10:25 am,10:55 am,11:28 am,12:33 pm,2:13 pm,2:44 pm,3:27 pm,4:24 pm,5:10 pm,6:05 pm,7:57 pm,8:05 pm,
+kalwa,,,,,10:35 am,,10:59 am,,,2:17 pm,2:48 pm,3:31 pm,4:28 pm,,,,,8:09 pm,
+diva,,,,,10:45 am,,11:09 am,,,2:27 pm,2:58 pm,3:41 pm,4:38 pm,,,,,8:19 pm,
+mumbra,,,,,10:41 am,,11:05 am,,,2:23 pm,2:54 pm,3:37 pm,4:34 pm,,,,,8:15 pm,
+kopar,,,,,10:50 am,,11:14 am,,,2:32 pm,3:03 pm,3:46 pm,4:43 pm,,,,,8:24 pm,
+dombivli,7:09 am,8:48 am,9:22 am,9:54 am,10:17 am,10:53 am,10:38 am,11:17 am,11:41 am,12:46 pm,2:35 pm,3:06 pm,3:49 pm,4:46 pm,5:23 pm,6:18 pm,8:10 pm,8:27 pm,
+thakurli,,,,,10:56 am,,11:20 am,,,2:38 pm,3:09 pm,3:52 pm,4:49 pm,,,,,8:30 pm,
+kalyan,7:18 am,8:57 am,9:31 am,10:03 am,10:26 am,11:02 am,10:47 am,11:25 am,11:50 am,12:55 pm,2:44 pm,3:15 pm,3:58 pm,4:55 pm,5:32 pm,6:27 pm,8:19 pm,8:35 pm,
+vithalwadi,7:22 am,9:01 am,9:35 am,10:07 am,10:30 am,11:06 am,10:51 am,11:29 am,11:54 am,12:59 pm,2:48 pm,3:19 pm,4:02 pm,4:59 pm,5:36 pm,6:31 pm,8:23 pm,8:39 pm,
+ulhasnagar,7:25 am,9:04 am,9:38 am,10:10 am,10:33 am,11:09 am,10:54 am,11:32 am,11:57 am,1:02 pm,2:51 pm,3:22 pm,4:05 pm,5:02 pm,5:39 pm,6:34 pm,8:26 pm,8:42 pm,
+ambernath,7:30 am,9:09 am,9:43 am,10:15 am,10:38 am,11:15 am,10:59 am,11:36 am,12:02 pm,1:07 pm,2:57 pm,3:28 pm,4:11 pm,5:08 pm,5:44 pm,6:39 pm,8:31 pm,8:46 pm,
+badlapur,7:39 am,9:18 am,9:52 am,10:24 am,10:47 am,11:24 am,11:08 am,11:44 am,12:11 pm,1:16 pm,3:06 pm,3:37 pm,4:20 pm,5:17 pm,5:53 pm,6:48 pm,8:40 pm,8:54 pm,
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur,Badlapur
+speed,S,S,S,S,F,F
+Mumbai CST,7:38 pm,9:09 pm,9:36 pm,10:00 pm,5:55 pm,6:39 pm
+Masjid,7:41 pm,9:12 pm,9:39 pm,10:03 pm,,
+Sandhurst Road,7:43 pm,9:14 pm,9:41 pm,10:05 pm,,
+Byculla,7:46 pm,9:17 pm,9:44 pm,10:08 pm,6:02 pm,6:46 pm
+Chinchpokli,7:48 pm,9:19 pm,9:46 pm,10:10 pm,,
+Currey Road,7:50 pm,9:21 pm,9:48 pm,10:12 pm,,
+Parel,7:53 pm,9:24 pm,9:51 pm,10:15 pm,,
+Dadar,7:56 pm,9:27 pm,9:54 pm,10:18 pm,6:08 pm,6:52 pm
+Matunga,7:59 pm,9:30 pm,9:57 pm,10:21 pm,,
+Sion,8:03 pm,9:34 pm,10:01 pm,10:25 pm,,
+Kurla,8:07 pm,9:38 pm,10:05 pm,10:29 pm,6:16 pm,7:00 pm
+vidyavihar,8:10 pm,9:41 pm,10:08 pm,10:32 pm,,
+ghatkopar,8:13 pm,9:44 pm,10:11 pm,10:35 pm,6:21 pm,7:05 pm
+vikhroli,8:18 pm,9:49 pm,10:16 pm,10:40 pm,,
+kanjurmarg,8:21 pm,9:52 pm,10:19 pm,10:43 pm,,
+bhandup,8:23 pm,9:54 pm,10:21 pm,10:45 pm,,
+nahur,8:26 pm,9:57 pm,10:24 pm,10:48 pm,,
+mulund,8:29 pm,10:00 pm,10:27 pm,10:51 pm,,
+thane,8:33 pm,10:04 pm,10:31 pm,10:55 pm,6:35 pm,7:19 pm
+kalwa,8:37 pm,10:08 pm,10:35 pm,10:59 pm,,
+diva,8:47 pm,10:18 pm,10:45 pm,11:09 pm,,
+mumbra,8:43 pm,10:14 pm,10:41 pm,11:05 pm,,
+kopar,8:52 pm,10:23 pm,10:50 pm,11:14 pm,,
+dombivli,8:55 pm,10:26 pm,10:53 pm,11:17 pm,6:48 pm,7:32 pm
+thakurli,8:58 pm,10:29 pm,10:56 pm,11:20 pm,,
+kalyan,9:04 pm,10:35 pm,11:02 pm,11:26 pm,6:57 pm,7:41 pm
+vithalwadi,9:08 pm,10:39 pm,11:06 pm,11:30 pm,7:01 pm,7:45 pm
+ulhasnagar,9:11 pm,10:42 pm,11:09 pm,11:33 pm,7:04 pm,7:48 pm
+ambernath,9:17 pm,10:48 pm,11:15 pm,11:39 pm,7:09 pm,7:53 pm
+badlapur,9:26 pm,10:57 pm,11:24 pm,11:48 pm,7:18 pm,8:02 pm
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Dombivli,Dombivli,Dombivli,Dombivli
+speed,S,S,S,M
+Mumbai CST,6:56 pm,8:00 pm,8:31 pm,9:33 pm
+Masjid,6:59 pm,8:03 pm,8:34 pm,
+Sandhurst Road,7:01 pm,8:05 pm,8:36 pm,
+Byculla,7:04 pm,8:08 pm,8:39 pm,9:40 pm
+Chinchpokli,7:06 pm,8:10 pm,8:41 pm,
+Currey Road,7:08 pm,8:12 pm,8:43 pm,
+Parel,7:11 pm,8:15 pm,8:46 pm,
+Dadar,7:14 pm,8:18 pm,8:49 pm,9:46 pm
+Matunga,7:17 pm,8:21 pm,8:52 pm,
+Sion,7:21 pm,8:25 pm,8:56 pm,
+Kurla,7:25 pm,8:29 pm,9:00 pm,9:54 pm
+vidyavihar,7:28 pm,8:32 pm,9:03 pm,
+ghatkopar,7:31 pm,8:35 pm,9:06 pm,9:59 pm
+vikhroli,7:36 pm,8:40 pm,9:11 pm,
+kanjurmarg,7:39 pm,8:43 pm,9:14 pm,
+bhandup,7:41 pm,8:45 pm,9:16 pm,10:07 pm
+nahur,7:44 pm,8:48 pm,9:19 pm,
+mulund,7:47 pm,8:51 pm,9:22 pm,
+thane,7:51 pm,8:55 pm,9:26 pm,10:17 pm
+kalwa,7:55 pm,8:59 pm,9:30 pm,10:21 pm
+diva,8:05 pm,9:09 pm,9:40 pm,10:31 pm
+mumbra,8:01 pm,9:05 pm,9:36 pm,10:27 pm
+kopar,8:10 pm,9:14 pm,9:45 pm,10:36 pm
+dombivli,8:13 pm,9:17 pm,9:48 pm,10:39 pm
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Kalyan,Kalyan,Kalyan,Kalyan
+speed,S,S,M,S
+Mumbai CST,9:21 pm,10:04 pm,10:23 pm,10:36 pm
+Masjid,9:24 pm,10:07 pm,,10:39 pm
+Sandhurst Road,9:26 pm,10:09 pm,,10:41 pm
+Byculla,9:29 pm,10:12 pm,10:30 pm,10:44 pm
+Chinchpokli,9:31 pm,10:14 pm,,10:46 pm
+Currey Road,9:33 pm,10:16 pm,,10:48 pm
+Parel,9:36 pm,10:19 pm,,10:51 pm
+Dadar,9:39 pm,10:22 pm,10:36 pm,10:54 pm
+Matunga,9:42 pm,10:25 pm,,10:57 pm
+Sion,9:46 pm,10:29 pm,,11:01 pm
+Kurla,9:50 pm,10:33 pm,10:44 pm,11:05 pm
+vidyavihar,9:53 pm,10:36 pm,,11:08 pm
+ghatkopar,9:56 pm,10:39 pm,10:49 pm,11:11 pm
+vikhroli,10:01 pm,10:44 pm,10:54 pm,11:16 pm
+kanjurmarg,10:04 pm,10:47 pm,,11:19 pm
+bhandup,10:06 pm,10:49 pm,,11:21 pm
+nahur,10:09 pm,10:52 pm,,11:24 pm
+mulund,10:12 pm,10:55 pm,,11:27 pm
+thane,10:16 pm,10:59 pm,11:07 pm,11:31 pm
+kalwa,10:20 pm,11:03 pm,11:12 pm,11:35 pm
+diva,10:30 pm,11:13 pm,11:22 pm,11:45 pm
+mumbra,10:26 pm,11:09 pm,11:18 pm,11:41 pm
+kopar,10:35 pm,11:18 pm,11:27 pm,11:50 pm
+dombivli,10:38 pm,11:21 pm,11:30 pm,11:53 pm
+thakurli,10:41 pm,11:24 pm,11:33 pm,11:56 pm
+kalyan,10:47 pm,11:30 pm,11:38 pm,12:02 am
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane
+speed,S,S,S,S,S,S,S,S,S,S,S,S,S,F,S,S,F,S,S
+Mumbai CST,6:50 am,6:58 am,7:13 am,7:30 am,7:54 am,7:58 am,8:09 am,8:17 am,8:26 am,8:31 am,8:51 am,8:57 am,8:59 am,9:03 am,9:08 am,9:19 am,9:34 am,9:40 am,
+Masjid,6:53 am,7:01 am,7:16 am,7:33 am,7:57 am,8:01 am,8:12 am,8:20 am,8:29 am,8:34 am,8:54 am,,9:02 am,9:06 am,,9:22 am,,9:43 am,
+Sandhurst Road,6:55 am,7:03 am,7:18 am,7:35 am,7:59 am,8:03 am,8:14 am,8:22 am,8:31 am,8:36 am,8:56 am,,9:04 am,9:08 am,,9:24 am,,9:45 am,
+Byculla,6:58 am,7:06 am,7:21 am,7:38 am,8:02 am,8:06 am,8:17 am,8:25 am,8:34 am,8:39 am,8:59 am,9:04 am,9:07 am,9:11 am,9:15 am,9:27 am,9:41 am,9:48 am,
+Chinchpokli,7:00 am,7:08 am,7:23 am,7:40 am,8:04 am,8:08 am,8:19 am,8:27 am,8:36 am,8:41 am,9:01 am,,9:09 am,9:13 am,,9:29 am,,9:50 am,
+Currey Road,7:02 am,7:10 am,7:25 am,7:42 am,8:06 am,8:10 am,8:21 am,8:29 am,8:38 am,8:43 am,9:03 am,,9:11 am,9:15 am,,9:31 am,,9:52 am,
+Parel,7:05 am,7:13 am,7:28 am,7:45 am,8:09 am,8:13 am,8:24 am,8:32 am,8:41 am,8:46 am,9:06 am,9:14 am,9:18 am,,9:34 am,,9:55 am,9:55 am,
+Dadar,7:08 am,7:16 am,7:31 am,7:48 am,8:12 am,8:16 am,8:27 am,8:35 am,8:44 am,8:49 am,9:09 am,9:10 am,9:17 am,9:21 am,9:21 am,9:37 am,9:47 am,9:58 am,
+Matunga,7:11 am,7:19 am,7:34 am,7:51 am,8:15 am,8:19 am,8:30 am,8:38 am,8:47 am,8:52 am,9:12 am,9:20 am,9:24 am,,9:40 am,,10:01 am,10:01 am,
+Sion,7:15 am,7:23 am,7:38 am,7:55 am,8:19 am,8:23 am,8:34 am,8:42 am,8:51 am,8:56 am,9:16 am,9:24 am,9:28 am,,9:44 am,,10:05 am,10:05 am,
+Kurla,7:19 am,7:27 am,7:42 am,7:59 am,8:23 am,8:27 am,8:38 am,8:46 am,8:55 am,9:00 am,9:20 am,9:18 am,9:28 am,9:29 am,9:29 am,9:48 am,9:55 am,10:09 am,
+vidyavihar,7:22 am,7:30 am,7:45 am,8:02 am,8:26 am,8:30 am,8:41 am,8:49 am,8:58 am,9:03 am,9:23 am,,9:31 am,9:35 am,,9:51 am,,10:12 am,
+ghatkopar,7:25 am,7:33 am,7:48 am,8:05 am,8:29 am,8:33 am,8:44 am,8:52 am,9:01 am,9:06 am,9:26 am,9:23 am,9:34 am,9:34 am,9:34 am,9:54 am,10:00 am,10:15 am,
+vikhroli,7:30 am,7:38 am,7:53 am,8:10 am,8:34 am,8:38 am,8:49 am,8:57 am,9:06 am,9:11 am,9:31 am,9:39 am,9:43 am,,9:59 am,,10:20 am,10:20 am,
+kanjurmarg,7:33 am,7:41 am,7:56 am,8:13 am,8:37 am,8:41 am,8:52 am,9:00 am,9:09 am,9:14 am,9:34 am,9:42 am,9:46 am,,10:02 am,,10:23 am,10:23 am,
+bhandup,7:35 am,7:43 am,7:58 am,8:15 am,8:39 am,8:43 am,8:54 am,9:02 am,9:11 am,9:16 am,9:36 am,9:28 am,9:44 am,9:39 am,9:39 am,10:04 am,10:05 am,10:25 am,
+nahur,7:38 am,7:46 am,8:01 am,8:18 am,8:42 am,8:46 am,8:57 am,9:05 am,9:14 am,9:19 am,9:39 am,,9:47 am,9:51 am,,10:07 am,,10:28 am,
+mulund,7:41 am,7:49 am,8:04 am,8:21 am,8:45 am,8:49 am,9:00 am,9:08 am,9:17 am,9:22 am,9:42 am,9:33 am,9:50 am,9:50 am,9:50 am,10:10 am,10:10 am,10:31 am,
+thane,7:45 am,7:53 am,8:08 am,8:25 am,8:49 am,8:53 am,9:04 am,9:12 am,9:21 am,9:26 am,9:46 am,9:54 am,9:58 am,9:50 am,10:14 am,10:16 am,10:35 am,10:35 am,
+
+source,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST,Mumbai CST
+destination,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane
+speed,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,F,S,S
+Mumbai CST,2:02 pm,2:23 pm,3:12 pm,3:34 pm,4:00 pm,4:16 pm,4:35 pm,4:50 pm,5:00 pm,5:08 pm,5:16 pm,5:25 pm,5:33 pm,5:43 pm,6:00 pm,6:10 pm,6:18 pm,6:29 pm,
+Masjid,2:05 pm,2:26 pm,3:15 pm,3:37 pm,4:03 pm,4:19 pm,4:38 pm,4:53 pm,5:03 pm,5:11 pm,5:19 pm,5:28 pm,5:36 pm,5:46 pm,6:03 pm,,6:21 pm,6:32 pm,
+Sandhurst Road,2:07 pm,2:28 pm,3:17 pm,3:39 pm,4:05 pm,4:21 pm,4:40 pm,4:55 pm,5:05 pm,5:13 pm,5:21 pm,5:30 pm,5:38 pm,5:48 pm,6:05 pm,,6:23 pm,6:34 pm,
+Byculla,2:10 pm,2:31 pm,3:20 pm,3:42 pm,4:08 pm,4:24 pm,4:43 pm,4:58 pm,5:08 pm,5:16 pm,5:24 pm,5:33 pm,5:41 pm,5:51 pm,6:08 pm,6:17 pm,6:26 pm,6:37 pm,
+Chinchpokli,2:12 pm,2:33 pm,3:22 pm,3:44 pm,4:10 pm,4:26 pm,4:45 pm,5:00 pm,5:10 pm,5:18 pm,5:26 pm,5:35 pm,5:43 pm,5:53 pm,6:10 pm,,6:28 pm,6:39 pm,
+Currey Road,2:14 pm,2:35 pm,3:24 pm,3:46 pm,4:12 pm,4:28 pm,4:47 pm,5:02 pm,5:12 pm,5:20 pm,5:28 pm,5:37 pm,5:45 pm,5:55 pm,6:12 pm,,6:30 pm,6:41 pm,
+Parel,2:17 pm,2:38 pm,3:27 pm,3:49 pm,4:15 pm,4:31 pm,4:50 pm,5:05 pm,5:15 pm,5:23 pm,5:31 pm,5:40 pm,5:48 pm,5:58 pm,6:15 pm,,6:33 pm,6:44 pm,
+Dadar,2:20 pm,2:41 pm,3:30 pm,3:52 pm,4:18 pm,4:34 pm,4:53 pm,5:08 pm,5:18 pm,5:26 pm,5:34 pm,5:43 pm,5:51 pm,6:01 pm,6:18 pm,6:23 pm,6:36 pm,6:47 pm,
+Matunga,2:23 pm,2:44 pm,3:33 pm,3:55 pm,4:21 pm,4:37 pm,4:56 pm,5:11 pm,5:21 pm,5:29 pm,5:37 pm,5:46 pm,5:54 pm,6:04 pm,6:21 pm,,6:39 pm,6:50 pm,
+Sion,2:27 pm,2:48 pm,3:37 pm,3:59 pm,4:25 pm,4:41 pm,5:00 pm,5:15 pm,5:25 pm,5:33 pm,5:41 pm,5:50 pm,5:58 pm,6:08 pm,6:25 pm,,6:43 pm,6:54 pm,
+Kurla,2:31 pm,2:52 pm,3:41 pm,4:03 pm,4:29 pm,4:45 pm,5:04 pm,5:19 pm,5:29 pm,5:37 pm,5:45 pm,5:54 pm,6:02 pm,6:12 pm,6:29 pm,6:31 pm,6:47 pm,6:58 pm,
+vidyavihar,2:34 pm,2:55 pm,3:44 pm,4:06 pm,4:32 pm,4:48 pm,5:07 pm,5:22 pm,5:32 pm,5:40 pm,5:48 pm,5:57 pm,6:05 pm,6:15 pm,6:32 pm,,6:50 pm,7:01 pm,
+ghatkopar,2:37 pm,2:58 pm,3:47 pm,4:09 pm,4:35 pm,4:51 pm,5:10 pm,5:25 pm,5:35 pm,5:43 pm,5:51 pm,6:00 pm,6:08 pm,6:18 pm,6:35 pm,6:36 pm,6:53 pm,7:04 pm,
+vikhroli,2:42 pm,3:03 pm,3:52 pm,4:14 pm,4:40 pm,4:56 pm,5:15 pm,5:30 pm,5:40 pm,5:48 pm,5:56 pm,6:05 pm,6:13 pm,6:23 pm,6:40 pm,,7:01 pm,7:09 pm,
+kanjurmarg,2:45 pm,3:06 pm,3:55 pm,4:17 pm,4:43 pm,4:59 pm,5:18 pm,5:33 pm,5:43 pm,5:51 pm,5:59 pm,6:08 pm,6:16 pm,6:26 pm,6:43 pm,,7:01 pm,7:12 pm,
+bhandup,2:47 pm,3:08 pm,3:57 pm,4:19 pm,4:45 pm,5:01 pm,5:20 pm,5:35 pm,5:45 pm,5:53 pm,6:01 pm,6:10 pm,6:18 pm,6:28 pm,6:41 pm,,7:03 pm,7:14 pm,
+nahur,2:50 pm,3:11 pm,4:00 pm,4:22 pm,4:48 pm,5:04 pm,5:23 pm,5:38 pm,5:48 pm,5:56 pm,6:04 pm,6:13 pm,6:21 pm,6:31 pm,6:48 pm,,7:06 pm,7:17 pm,
+mulund,2:53 pm,3:14 pm,4:03 pm,4:25 pm,4:51 pm,5:07 pm,5:26 pm,5:41 pm,5:51 pm,5:59 pm,6:07 pm,6:16 pm,6:24 pm,6:34 pm,6:51 pm,6:46 pm,7:09 pm,7:20 pm,
+thane,2:57 pm,3:18 pm,4:07 pm,4:29 pm,4:55 pm,5:11 pm,5:30 pm,5:45 pm,5:55 pm,6:03 pm,6:11 pm,6:20 pm,6:28 pm,6:38 pm,6:55 pm,6:52 pm,7:13 pm,7:24 pm,
+
+source,Dadar,Dadar,Dadar,Dadar,Dadar,Dadar,Dadar,Dadar
+destination,Thane,Thane,Thane,Thane,Thane,Thane,Thane,Thane
+speed,F,S,S,S,S,S,S,S
+Dadar,12:13 am,11:11 am,4:10 pm,7:29 pm,8:00 pm,8:53 pm,10:26 pm,10:50 pm
+Matunga,,11:14 am,4:13 pm,7:32 pm,8:03 pm,8:56 pm,10:29 pm,10:53 pm
+Sion,,11:18 am,4:17 pm,7:36 pm,8:07 pm,9:00 pm,10:33 pm,10:57 pm
+Kurla,12:22 am,11:22 am,4:21 pm,7:40 pm,8:11 pm,9:04 pm,10:37 pm,11:01 pm
+vidyavihar,,11:25 am,4:24 pm,7:43 pm,8:14 pm,9:07 pm,10:40 pm,11:04 pm
+ghatkopar,12:27 am,11:28 am,4:27 pm,7:46 pm,8:17 pm,9:10 pm,10:43 pm,11:07 pm
+vikhroli,,11:33 am,4:32 pm,7:51 pm,8:22 pm,9:15 pm,10:48 pm,11:12 pm
+kanjurmarg,,11:36 am,4:35 pm,7:54 pm,8:25 pm,9:18 pm,10:51 pm,11:15 pm
+bhandup,,11:38 am,4:37 pm,7:56 pm,8:27 pm,9:20 pm,10:53 pm,11:17 pm
+nahur,,11:41 am,4:40 pm,7:59 pm,8:30 pm,9:23 pm,10:56 pm,11:20 pm
+mulund,12:37 am,11:44 am,4:43 pm,8:02 pm,8:33 pm,9:26 pm,10:59 pm,11:23 pm
+thane,12:40 am,11:48 am,4:47 pm,8:06 pm,8:37 pm,9:30 pm,11:03 pm,11:27 pm
+
+source,Dadar,Dadar,,
+destination,Dombivli,Dombivli,,
+speed,S,S,,
+Dadar,5:58 pm,9:15 pm,,
+Matunga,6:01 pm,9:18 pm,,
+Sion,6:05 pm,9:22 pm,,
+Kurla,6:09 pm,9:26 pm,,
+vidyavihar,6:12 pm,9:29 pm,,
+ghatkopar,6:15 pm,9:32 pm,,
+vikhroli,6:20 pm,9:37 pm,,
+kanjurmarg,6:23 pm,9:40 pm,,
+bhandup,6:25 pm,9:42 pm,,
+nahur,6:28 pm,9:45 pm,,
+mulund,6:31 pm,9:48 pm,,
+thane,6:35 pm,9:52 pm,,
+kalwa,6:39 pm,9:56 pm,,
+diva,6:49 pm,10:06 pm,,
+mumbra,6:45 pm,10:02 pm,,
+kopar,6:54 pm,10:11 pm,,
+dombivli,6:57 pm,10:14 pm,,
+
+source,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla,Kurla
+destination,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan,Kalyan
+speed,S,S,S,S,S,S,S
+Kurla,5:16 am,5:26 am,5:55 am,6:18 am,6:55 am,7:14 am,5:00 pm
+vidyavihar,12:03 am,12:03 am,12:03 am,12:03 am,12:03 am,12:03 am,12:03 am
+ghatkopar,12:06 am,12:06 am,12:06 am,12:06 am,12:06 am,12:06 am,12:06 am
+vikhroli,12:11 am,12:11 am,12:11 am,12:11 am,12:11 am,12:11 am,12:11 am
+kanjurmarg,12:14 am,12:14 am,12:14 am,12:14 am,12:14 am,12:14 am,12:14 am
+bhandup,12:16 am,12:16 am,12:16 am,12:16 am,12:16 am,12:16 am,12:16 am
+nahur,12:19 am,12:19 am,12:19 am,12:19 am,12:19 am,12:19 am,12:19 am
+mulund,12:22 am,12:22 am,12:22 am,12:22 am,12:22 am,12:22 am,12:22 am
+thane,12:26 am,12:26 am,12:26 am,12:26 am,12:26 am,12:26 am,12:26 am
+kalwa,12:30 am,12:30 am,12:30 am,12:30 am,12:30 am,12:30 am,12:30 am
+diva,12:40 am,12:40 am,12:40 am,12:40 am,12:40 am,12:40 am,12:40 am
+mumbra,12:36 am,12:36 am,12:36 am,12:36 am,12:36 am,12:36 am,12:36 am
+kopar,12:45 am,12:45 am,12:45 am,12:45 am,12:45 am,12:45 am,12:45 am
+dombivli,12:48 am,12:48 am,12:48 am,12:48 am,12:48 am,12:48 am,12:48 am
+thakurli,12:51 am,12:51 am,12:51 am,12:51 am,12:51 am,12:51 am,12:51 am
+kalyan,12:57 am,12:57 am,12:57 am,12:57 am,12:57 am,12:57 am,12:57 am
+
+source,Mumbai CST,,,
+destination,Ambernath,,,
+speed,F,,,
+Mumbai CST,11:18 pm,,,
+Masjid,,,,
+Sandhurst Road,,,,
+Byculla,11:25 pm,,,
+Chinchpokli,,,,
+Currey Road,,,,
+Parel,,,,
+Dadar,11:31 pm,,,
+Matunga,,,,
+Sion,,,,
+Kurla,11:39 pm,,,
+vidyavihar,,,,
+ghatkopar,11:44 pm,,,
+vikhroli,,,,
+kanjurmarg,,,,
+bhandup,,,,
+nahur,,,,
+mulund,,,,
+thane,11:58 pm,,,
+kalwa,,,,
+diva,,,,
+mumbra,,,,
+kopar,,,,
+dombivli,12:11 am,,,
+thakurli,,,,
+kalyan,12:20 am,,,
+vithalwadi,12:24 am,,,
+ulhasnagar,12:27 am,,,
+ambernath,12:32 am,,,

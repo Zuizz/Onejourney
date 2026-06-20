@@ -21,8 +21,6 @@ const priorities = [
 
   { id: 'fastest', label: 'Fastest', icon: Zap, sort: (a, b) => a.durationMin - b.durationMin },
 
-  { id: 'cheapest', label: 'Cheapest', icon: IndianRupee, sort: (a, b) => a.costVal - b.costVal },
-
   { id: 'safest', label: 'Safest', icon: Shield, sort: (a, b) => b.safetyVal - a.safetyVal },
 
   { id: 'greenest', label: 'Greenest', icon: Sprout, sort: (a, b) => a.co2Val - b.co2Val },
@@ -35,9 +33,9 @@ const priorities = [
 
 const routeMetrics = [
 
-  { label: 'Cost', key: 'cost', icon: Wallet },
+  { label: 'Cost',   key: 'cost',   icon: Wallet     },
 
-  { label: 'CO₂', key: 'co2', icon: Leaf },
+  { label: 'CO₂',   key: 'co2',    icon: Leaf        },
 
   { label: 'Safety', key: 'safety', icon: ShieldCheck },
 
@@ -57,6 +55,10 @@ export default function JourneyResults() {
 
   const [bookingRouteId, setBookingRouteId] = useState(null);
 
+  const [aiInsight, setAiInsight] = useState(null); // { text, disclaimer, distanceKm }
+
+  const [aiLoading, setAiLoading] = useState(false);
+
 
 
   // Sort routes by active priority
@@ -74,75 +76,98 @@ export default function JourneyResults() {
   const handleDNAToggle = async () => {
 
     const next = !commuteDNA;
-
     setCommuteDNA(next);
 
-    if (next) {
-
+    if (!next) {
+      setAiInsight(null);
+      // Restore original routes
       try {
-
-        const res = await fetch('/api/commute-dna');
-
+        const res = await fetch('/api/routes/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(searchParams),
+        });
         const data = await res.json();
+        setRoutes(data.routes);
+      } catch (err) { console.error(err); }
+      return;
+    }
 
-        if (data.demoRoutes?.after) {
+    if (routes.length === 0) {
+      showToast('Search for routes first to apply AI DNA ranking', 'warning');
+      setCommuteDNA(false);
+      return;
+    }
 
-          setRoutes(data.demoRoutes.after);
+    setAiLoading(true);
+    showToast('🤖 AI is analysing your routes...', 'info');
 
-        } else if (routes.length > 0) {
+    try {
+      const token = localStorage.getItem('oj_token');
+      const res = await fetch('/api/ai/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        body: JSON.stringify({
+          from: searchParams?.from || '',
+          to: searchParams?.to || '',
+          routes,
+        }),
+      });
 
-          const rerankRes = await fetch('/api/commute-dna', {
+      const data = await res.json();
 
-            method: 'PUT',
+      if (data.ok && data.aiResult) {
+        const { rankedRouteIds, fareEstimates, topInsight, disclaimer, distanceKm } = data.aiResult;
 
-            headers: { 'Content-Type': 'application/json' },
-
-            body: JSON.stringify({ preferences: data.preferences }),
-
-          });
-
-          const reranked = await rerankRes.json();
-
-          if (reranked.demoRoutes?.after) setRoutes(reranked.demoRoutes.after);
-
-        } else {
-
-          showToast('Search for routes first to apply DNA ranking', 'warning');
-
-          setCommuteDNA(false);
-
+        // Re-order routes by AI ranking
+        let reranked = routes.slice();
+        if (Array.isArray(rankedRouteIds) && rankedRouteIds.length > 0) {
+          reranked = rankedRouteIds
+            .map(id => routes.find(r => r.id === id))
+            .filter(Boolean);
+          // Append any routes AI didn't mention
+          routes.forEach(r => { if (!reranked.find(rr => rr.id === r.id)) reranked.push(r); });
         }
 
-      } catch (err) {
+        // Inject AI-estimated fares into route objects
+        if (fareEstimates) {
+          reranked = reranked.map((r, i) => {
+            const est = fareEstimates[r.id];
+            if (est && est.cost) {
+              return {
+                ...r,
+                cost: est.cost,
+                costVal: est.costVal || r.costVal,
+                recommended: i === 0,
+                insight: i === 0 ? (topInsight || r.insight) : r.insight,
+              };
+            }
+            return { ...r, recommended: i === 0 };
+          });
+        } else {
+          reranked = reranked.map((r, i) => ({
+            ...r,
+            recommended: i === 0,
+            insight: i === 0 ? (topInsight || r.insight) : r.insight,
+          }));
+        }
 
-        console.error(err);
-
+        setRoutes(reranked);
+        setAiInsight({ text: topInsight, disclaimer, distanceKm });
+        showToast('✨ AI Commute DNA ranking applied!', 'success');
+      } else {
+        showToast('AI analysis failed, showing default ranking', 'warning');
         setCommuteDNA(false);
-
       }
-
-    } else {
-
-      // Re-fetch original routes
-
-      try {
-
-        const res = await fetch('/api/routes/search', {
-
-          method: 'POST',
-
-          headers: { 'Content-Type': 'application/json' },
-
-          body: JSON.stringify(searchParams),
-
-        });
-
-        const data = await res.json();
-
-        setRoutes(data.routes);
-
-      } catch (err) { console.error(err); }
-
+    } catch (err) {
+      console.error('AI DNA error:', err);
+      showToast('AI unavailable, showing default ranking', 'warning');
+      setCommuteDNA(false);
+    } finally {
+      setAiLoading(false);
     }
 
   };
@@ -299,29 +324,52 @@ export default function JourneyResults() {
 
       {/* Commute DNA Toggle */}
 
-      <div className="flex items-center justify-between" style={{
-
-        background: '#F9FAFB',
-
+      <div style={{
+        background: commuteDNA ? 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)' : '#F9FAFB',
         padding: '12px 16px', borderRadius: 'var(--radius-md)',
-
-        border: '1px solid #E5E7EB',
-
+        border: commuteDNA ? 'none' : '1px solid #E5E7EB',
+        transition: 'all 0.3s',
       }}>
 
-        <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#111827' }}>Commute DNA personalization</span>
+        <div className="flex items-center justify-between">
 
-        <div
+          <div className="flex items-center gap-8">
+            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: commuteDNA ? '#fff' : '#111827' }}>
+              🤖 AI Commute DNA
+            </span>
+            {aiLoading && (
+              <span style={{ fontSize: '0.65rem', color: '#c7d2fe', fontWeight: 500 }}>analysing…</span>
+            )}
+          </div>
 
-          className={`toggle ${commuteDNA ? 'on' : ''}`}
-
-          onClick={handleDNAToggle}
-
-        >
-
-          <div className="toggle-knob" />
+          <div
+            className={`toggle ${commuteDNA ? 'on' : ''}`}
+            onClick={!aiLoading ? handleDNAToggle : undefined}
+            style={{ opacity: aiLoading ? 0.6 : 1, cursor: aiLoading ? 'not-allowed' : 'pointer' }}
+          >
+            <div className="toggle-knob" />
+          </div>
 
         </div>
+
+        {/* AI Insight Banner */}
+        {commuteDNA && aiInsight && !aiLoading && (
+          <div style={{ marginTop: 10, borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: 10 }}>
+            <p style={{ fontSize: '0.72rem', color: '#e0e7ff', fontWeight: 500, lineHeight: 1.5 }}>
+              ✨ {aiInsight.text}
+            </p>
+            {aiInsight.distanceKm && (
+              <p style={{ fontSize: '0.65rem', color: '#a5b4fc', marginTop: 4 }}>
+                Estimated distance: ~{aiInsight.distanceKm} km
+              </p>
+            )}
+            {aiInsight.disclaimer && (
+              <p style={{ fontSize: '0.62rem', color: '#a5b4fc', marginTop: 2, fontStyle: 'italic' }}>
+                {aiInsight.disclaimer}
+              </p>
+            )}
+          </div>
+        )}
 
       </div>
 
@@ -395,37 +443,59 @@ export default function JourneyResults() {
 
             </div>
 
+            {/* Departure / Arrival time strip — shown for CSV bus routes */}
+            {route.departureTime && (
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 6, marginTop: 8,
+                background: '#EEF2FF', borderRadius: '8px', padding: '6px 12px',
+              }}>
+                <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#4F46E5' }}>DEP</span>
+                <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#1e1b4b' }}>{route.departureTime}</span>
+                <span style={{ margin: '0 6px', color: '#a5b4fc', fontWeight: 700 }}>→</span>
+                <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#059669' }}>ARR</span>
+                <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#064e3b' }}>{route.arrivalTime}</span>
+                {route.travelDate && (
+                  <span style={{ marginLeft: 'auto', fontSize: '0.65rem', color: '#6366f1', fontWeight: 600 }}>
+                    {new Date(route.travelDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}
+                  </span>
+                )}
+              </div>
+            )}
 
+            {/* Metrics Grid — Cost only shown for train routes */}
 
-            {/* Metrics Grid */}
+            {(() => {
+              const visibleMetrics = routeMetrics.filter(m => m.key !== 'cost' || route.cost);
+              return (
+                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${visibleMetrics.length}, 1fr)`, gap: 8, marginTop: 12 }}>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginTop: 12 }}>
+                  {visibleMetrics.map(m => {
 
-              {routeMetrics.map(m => {
+                    const MetricIcon = m.icon;
 
-                const MetricIcon = m.icon;
+                    return (
 
-                return (
+                      <div key={m.label} className="metric-chip">
 
-                  <div key={m.label} className="metric-chip">
+                        <div className="metric-label">
 
-                    <div className="metric-label">
+                          <MetricIcon {...ICON} />
 
-                      <MetricIcon {...ICON} />
+                          {m.label}
 
-                      {m.label}
+                        </div>
 
-                    </div>
+                        <p className="metric-value">{route[m.key]}</p>
 
-                    <p className="metric-value">{route[m.key]}</p>
+                      </div>
 
-                  </div>
+                    );
 
-                );
+                  })}
 
-              })}
-
-            </div>
+                </div>
+              );
+            })()}
 
 
 

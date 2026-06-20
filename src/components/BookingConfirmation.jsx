@@ -83,6 +83,7 @@ export default function BookingConfirmation() {
               <p style={{ fontSize: '0.65rem', opacity: 0.7 }}>FROM</p>
               <p style={{ fontSize: '1rem', fontWeight: 700 }}>{booking.fromCode}</p>
               <p style={{ fontSize: '0.65rem', opacity: 0.7 }}>{booking.from}</p>
+              {booking.time && <p style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginTop: 2 }}>Dep: {booking.time}</p>}
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
@@ -96,6 +97,7 @@ export default function BookingConfirmation() {
               <p style={{ fontSize: '0.65rem', opacity: 0.7 }}>TO</p>
               <p style={{ fontSize: '1rem', fontWeight: 700 }}>{booking.toCode}</p>
               <p style={{ fontSize: '0.65rem', opacity: 0.7 }}>{booking.to}</p>
+              {booking.route?.arrivalTime && <p style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginTop: 2 }}>Arr: {booking.route.arrivalTime}</p>}
             </div>
           </div>
         </div>
